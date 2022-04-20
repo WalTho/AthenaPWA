@@ -31,7 +31,7 @@ body {
                 0% {
                     opacity: 0;
                     transform: translate(0, 0);
-                    background-color: white;
+                    background-color: rgb(100, 255, 255);
                 }
                 50% {
                     transform: translate(random(3) - 1 + vh, random(3) - 1 + vh);

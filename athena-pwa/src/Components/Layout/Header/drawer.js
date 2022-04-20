@@ -1,7 +1,8 @@
-import { Divider, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import {  Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import InfoIcon from '@mui/icons-material/Info';
 
   
 const styles = {
@@ -60,21 +61,26 @@ export default class MaterialDrawer
             >
                 <Link to='/about' className='Links' style={styles.link}>
                     <List>
-                    <ListItem button key='About Us'>
-                        <ListItemIcon>
-                        </ListItemIcon>
-                        <ListItemText primary='About Us' />
-                    </ListItem>
+                      <ListItem button key='About Us'>
+                          <ListItemIcon>   
+                            <InfoIcon />
+                          </ListItemIcon>
+                          <ListItemText primary='À propos' />
+                          <ListItemIcon>
+                          </ListItemIcon>
+                      </ListItem>
                     </List>
                 </Link>
                 <Link to='/contact' className='Links' style={styles.link}>
-                <List>
+                  <List>
                     <ListItem button key='Contact Us'>
-                    <ListItemIcon>
-                    </ListItemIcon>
-                    <ListItemText primary='Contact Us' />
+                      <ListItemIcon>
+                      </ListItemIcon>
+                      <ListItemText primary='Nous Rejoindre' />
+                          <ListItemIcon>
+                          </ListItemIcon>
                     </ListItem>
-                    </List>
+                  </List>
                 </Link>
             </Drawer>
       </div>

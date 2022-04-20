@@ -31,11 +31,18 @@
 .Links{
     margin-top: 20px !important; 
     text-decoration: none !important;
+    .MuiTypography-root {
+        font-size: 20px !important;
+    }
+    .MuiListItemIcon-root{
+        color: gray !important;
+    }
     :hover{
         transition: 0.3s ease-in-out !important;
         color: white !important;
+        .MuiListItemIcon-root{
+            transition: 0.3s ease-in-out !important;
+            color: white !important;
+        }
     }
-}
-.css-10hburv-MuiTypography-root {
-    font-size: 20px !important;
 }
