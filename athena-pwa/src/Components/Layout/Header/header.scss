@@ -1,0 +1,41 @@
+.css-11b3ww9-MuiPaper-root-MuiAppBar-root{
+    background-color: transparentize($color: white, $amount: 0.9) !important;
+}
+
+.css-1otzh7i-MuiTypography-root{
+    font-family: nasalization !important;
+    text-align: center;
+    font-size: 2em !important;
+    margin-top: 15px !important;
+}
+.athena-logo{
+    width: 50px;
+    height: 50px;
+}
+.css-4t3x6l-MuiPaper-root-MuiDrawer-paper{
+    z-index: 0 !important;
+    background-color: transparentize($color: white, $amount: 0.98) !important;
+    // background-color: aliceblue !important;
+    margin-top: 80px !important;
+}
+.AppBar{
+    z-index: 1 !important;
+    height: 80px !important;
+}
+.css-ancrnh-MuiButtonBase-root-MuiIconButton-root{
+    padding: 0 !important;
+    margin-top: 15px !important;
+    margin-left: 8px !important;
+    transition: all 1s ease-in-out !important;
+}
+.Links{
+    margin-top: 20px !important; 
+    text-decoration: none !important;
+    :hover{
+        transition: 0.3s ease-in-out !important;
+        color: white !important;
+    }
+}
+.css-10hburv-MuiTypography-root {
+    font-size: 20px !important;
+}
