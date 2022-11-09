@@ -14,9 +14,11 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
+    "react-scripts": "^5.0.1",
     "sass": "^1.50.1",
     "web-vitals": "^2.1.4"
   },
+  "homepage": "http://WalTho.github.io/AthenaPWA",
   "scripts": {
     "start": "react-scripts start",
     "sass": "sass --watch  ./src/main.scss:./public/style.css --style expanded",
@@ -49,5 +51,8 @@
       "url": ""
     }
   ],
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
+  }
 }
