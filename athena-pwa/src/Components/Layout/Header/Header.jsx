@@ -1,30 +1,44 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import MaterialDrawer from "../Header/drawer.js";
 
 const Header = () => {
     return (
-    <Box sx={{ flexGrow: 1 }}>
-        <AppBar 
-            className='AppBar'
-            position="fixed" 
-        >
-            <Toolbar>
-            <MaterialDrawer/>
-            <Typography
-                variant="h6"
-                noWrap
-                component="div"
-                sx={{ flexGrow: 1, display: { xs: 'block', sm: 'block' } }}
-            >
-                Athena
-            </Typography>
-            </Toolbar>
-        </AppBar>
-    </Box>
+      <div className="header">
+        <h1 className="header__title">
+          Athena
+        </h1>
+        <div className="header__nav">
+          <ul className="header__nav-list">
+            <li className="header__nav-list-item">
+                <a href="/" className="header__nav-list-item-link">
+                    Home
+                </a>
+            </li>
+            <li className="header__nav-list-item">
+                <a href="/" className="header__nav-list-item-link">
+                    About
+                </a>
+            </li>
+            <li className="header__nav-list-item">
+                <a href="/" className="header__nav-list-item-link">
+                    Medias
+                </a>
+            </li>
+            <li className="header__nav-list-item">
+                <a href="/" className="header__nav-list-item-link">
+                    Infos
+                </a>
+            </li>
+            <li className="header__nav-list-item">
+                <a href="/" className="header__nav-list-item-link">
+                    Join us
+                </a>
+            </li>
+          </ul>
+            <button className="header__nav-button">
+                <span className="header__nav-button-icon"></span>
+            </button>
+        </div>
+      </div>
   );
 }
 
