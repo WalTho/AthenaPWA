@@ -1,0 +1,38 @@
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 100%;
+  }
+  90%{
+    filter: drop-shadow(0 0 0px #ffffff);
+    width: 100%;
+  }
+  100%{
+    opacity: 0;
+    height: 0;
+    width: 95%;
+  }
+}
+.loader__container{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  &-icon{
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    color: white;
+    width: 100%;
+    text-align: center;
+    filter: drop-shadow(0 0 150px #ffffff);
+    animation: fadeIn 1.5s linear;
+    svg{
+      margin-top: 35vh;
+      width: 20vh;
+      height: auto;
+    }
+  }
+}
