@@ -1,0 +1,42 @@
+
+$i: white;
+
+.background{
+    background-color: black;
+    overflow: hidden;
+    height:100vh;
+    width: 100%;
+    &-stars {
+        position: relative;
+    }
+    @for $i from 1 through 500 {
+        .background-stars:nth-of-type(#{$i}) {
+            color: $i;
+            top: random(101) - 1 + vh;
+            left: random(101) - 1 + vw;
+            width: random(2) + px;
+            height: random(2) + px;
+            max-width: 100%;
+            max-height: 100%;
+            animation: move #{random(10) + 10}s ease-in-out infinite;
+            animation-delay: calc(#{$i} * #{random(10) + 10} / 100);
+            @keyframes move {
+                0% {
+                    opacity: 0;
+                    transform: translate(0, 0);
+                    background-color: rgb(100, 255, 255);
+                }
+                50% {
+                    transform: translate(random(3) - 1 + vh, random(3) - 1 + vh);
+                    opacity: calc(random(10) / 100) + 0.5;
+                    background-color: white;
+                }
+                100% {
+                    background-color: orangered;
+                    opacity: 0;
+                    transform: translate(0, 0);
+                }
+            }
+        }
+    }
+}

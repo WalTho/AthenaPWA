@@ -2,9 +2,10 @@
 @import './colors/colors.scss';
 
 @import './Components/Home/home.scss';
+@import './Components/Layout/Background/background.scss';
 @import './Components/Layout/Header/header.scss';
 @import './Components/Layout/Footer/footer.scss';
-
+@import './Components/Layout/Loader/loader.scss';
 
 *{
   box-sizing: border-box;
