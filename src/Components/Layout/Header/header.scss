@@ -1,4 +1,13 @@
+@keyframes navFadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
 .header{
+    animation: navFadeIn 0.3s linear;
     &__container{
         display: block;
         position: fixed;
