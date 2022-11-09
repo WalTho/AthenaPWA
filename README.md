@@ -4,7 +4,7 @@ Athena-PWA est une Progressive Web App qui a pour but de désengorger les canaux
 
 ### Pour lancer le projet :
 
-> - `cd athena-pwa`
+
 > - `npm install`
 > - `npm start`
 > - Pour faire des modifications, ne pas oublier de faire `npm run sass`
