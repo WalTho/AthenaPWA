@@ -1,13 +1,6 @@
 
 $i: white;
 
-html,
-body {
-    height:100%;
-    width: 100%;
-    margin: 0;
-}
-
 .home{
     background-color: black;
     overflow: hidden;
@@ -46,15 +39,4 @@ body {
             }
         }
     }
-    // &-title{
-    //     position: absolute;
-    //     width: 100%;
-    //     &-text{
-    //         font-size: 6em;
-    //         font-weight: bold;
-    //         font-family: nasalization;
-    //         color: white;
-    //         text-align: center;
-    //     }
-    // }
 }

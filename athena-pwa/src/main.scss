@@ -1,6 +1,21 @@
+@import './fonts/fonts.scss';
+@import './colors/colors.scss';
+
 @import './Components/Home/home.scss';
 @import './Components/Layout/Header/header.scss';
 @import './Components/Layout/Footer/footer.scss';
 
-@import 'src/style/fonts/fonts.scss';
-@import 'src/style/colors/colors.scss';
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+html,
+body {
+  height:100%;
+  width: 100%;
+  margin: 0;
+}

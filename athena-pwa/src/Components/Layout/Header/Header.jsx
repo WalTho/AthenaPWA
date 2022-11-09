@@ -1,43 +1,81 @@
-import * as React from 'react';
+import React from 'react';
+import {useState} from "react";
 
-const Header = () => {
+
+function Header() {
+    //handle nav list
+    const [showLinks, setShowLinks] = useState(false)
+    const handleShowLinks = () => {
+        setShowLinks(!showLinks)
+    }
+    //handle swipe
+    const [touchPosition, setTouchPosition] = useState(null)
+    const handleTouchStart = (e) => {
+        const touchDown = e.touches[0].clientY
+        setTouchPosition(touchDown)
+    }
+    const handleTouchMove = (e) => {
+        const touchDown = touchPosition
+        if(touchDown === null) {
+            return
+        }
+        const currentTouch = e.touches[0].clientY
+        const diff = touchDown - currentTouch
+        if (diff > 5) {
+            setShowLinks(!showLinks)
+        }
+        if (diff < -5) {
+            setShowLinks(!showLinks)
+        }
+        setTouchPosition(null)
+    }
+
     return (
       <div className="header">
-        <h1 className="header__title">
-          Athena
-        </h1>
-        <div className="header__nav">
-          <ul className="header__nav-list">
-            <li className="header__nav-list-item">
-                <a href="/" className="header__nav-list-item-link">
-                    Home
-                </a>
-            </li>
-            <li className="header__nav-list-item">
-                <a href="/" className="header__nav-list-item-link">
-                    About
-                </a>
-            </li>
-            <li className="header__nav-list-item">
-                <a href="/" className="header__nav-list-item-link">
-                    Medias
-                </a>
-            </li>
-            <li className="header__nav-list-item">
-                <a href="/" className="header__nav-list-item-link">
-                    Infos
-                </a>
-            </li>
-            <li className="header__nav-list-item">
-                <a href="/" className="header__nav-list-item-link">
-                    Join us
-                </a>
-            </li>
-          </ul>
-            <button className="header__nav-button">
-                <span className="header__nav-button-icon"></span>
-            </button>
-        </div>
+          <div className="header__container">
+              <div className="header__container-title">
+                  <h1 className="header__container-title-text">
+                      Athena
+                  </h1>
+              </div>
+              <div className="header__container-nav" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
+                  <ul className={`header__container-nav-list ${showLinks ? "show-nav" : "hide-nav"}`}>
+                      <li className="header__container-nav-list-item">
+                          <div className="header__container-nav-list-item-line"></div>
+                          <a href="/" className="header__container-nav-list-item-link">
+                              Home
+                          </a>
+                      </li>
+                      <li className="header__container-nav-list-item">
+                          <div className="header__container-nav-list-item-line"></div>
+                          <a href="/" className="header__container-nav-list-item-link">
+                              About
+                          </a>
+                      </li>
+                      <li className="header__container-nav-list-item">
+                          <div className="header__container-nav-list-item-line"></div>
+                          <a href="/" className="header__container-nav-list-item-link">
+                              Medias
+                          </a>
+                      </li>
+                      <li className="header__container-nav-list-item">
+                          <div className="header__container-nav-list-item-line"></div>
+                          <a href="/" className="header__container-nav-list-item-link">
+                              Infos
+                          </a>
+                      </li>
+                      <li className="header__container-nav-list-item">
+                          <div className="header__container-nav-list-item-line"></div>
+                          <a href="/" className="header__container-nav-list-item-link">
+                              Join us
+                          </a>
+                      </li>
+                  </ul>
+                  <button className="header__container-nav-button" onClick={handleShowLinks} tabIndex="1">
+                      <i className={`fa-solid ${showLinks ? "fa-chevron-up" : "fa-chevron-down"}`}></i>
+                  </button>
+              </div>
+          </div>
       </div>
   );
 }

@@ -1,18 +1,126 @@
 .header{
-    display: block;
-    position: fixed;
-    background-color: transparentize($color: white, $amount: 0.9) !important;
-    width: 100%;
-    height: 100px !important;
-    &__title{
-        font-family: Nasalization !important;
-        text-align: center;
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 29px;
-        margin-top: 35px !important;
-        color: white;
-        cursor: default; 
-        &::selection { background: transparent; }
+    &__container{
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: 100px ;
+        &-title{
+            display: block;
+            position: absolute;
+            background-color: black;
+            width: 100%;
+            height: 100%;
+            z-index: 4;
+            &-text{
+                z-index: 2;
+                font-family: Nasalization;
+                text-align: center;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 25px;
+                margin-top: 30px;
+                color: white;
+                cursor: default;
+                &::selection {
+                    background: transparent;
+                }
+            }
+        }
+        &-nav{
+            position: absolute;
+            height: 100vh;
+            margin-top: 35px;
+            right: 0;
+            left: 0;
+            &-list{
+                list-style: none;
+                padding: 100px 0 0 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                bottom: 0;
+                opacity: 0;
+                height: 100vh;
+                transform: translateY(-120%);
+                transition: all 0.35s ease-in-out;
+                z-index: -1;
+                &-item{
+                    width: 100%;
+                    position: relative;
+                    padding-top: 13vh;
+                    text-align: center;
+                    &:hover{
+                        .header__container-nav-list-item-line{
+                            width: 40% !important;
+                            background-color: white;
+                        }
+                    }
+                    &-line{
+                        position: absolute;
+                        background-color: transparentize($color: white, $amount: 0.50);
+                        height: 2px;
+                        width: 30%;
+                        overflow: hidden;
+                        margin-top: -40px;
+                        transition: all 0.3s ease-in-out;
+                    }
+                    &-link{
+                        display: block;
+                        text-decoration: none;
+                        color: $light-gray;
+                        font-size: 24px;
+                        font-family: AllRoundGothic;
+                        transition: all 0.2s ease-in-out;
+                        margin-top: -95px;
+                        padding: 40px;
+                        &:hover {
+                            color: white;
+                        }
+                    }
+                }
+            }
+            &-button{
+                display: block;
+                z-index: 5;
+                position: absolute;
+                top: -36px;
+                background-color: transparent;
+                border: none;
+                height: 100px;
+                width: 100%;
+                cursor: pointer;
+                .fa-chevron-down{
+                    display: block;
+                    color: white;
+                    font-size: 20px;
+                    position: relative;
+                    margin-top: 70px;
+                    transition: all 0.3s ease-in-out;
+                }
+                .fa-chevron-up{
+                    display: block;
+                    color: white;
+                    font-size: 20px;
+                    position: relative;
+                    margin-top: 80px;
+                    transition: all 0.3s ease-in-out;
+                }
+                &:active{
+                    .fa-chevron-down{
+                        margin-top: 80px;
+                    }
+                    .fa-chevron-up{
+                        margin-top: 70px;
+                    }
+                }
+            }
+        }
     }
+}
+
+.show-nav {
+    transform: translateY(0);
+    background-color: transparentize($color: black, $amount: 0.95);
+    backdrop-filter: blur(15px);
+    opacity: 1;
 }
