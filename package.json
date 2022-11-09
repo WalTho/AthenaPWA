@@ -23,7 +23,7 @@
     "start": "react-scripts start",
     "sass": "sass --watch  ./src/main.scss:./public/style.css --style expanded",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --passWithNoTests",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
