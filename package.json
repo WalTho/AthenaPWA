@@ -21,7 +21,8 @@
   "homepage": "http://WalTho.github.io/AthenaPWA",
   "scripts": {
     "start": "react-scripts start",
-    "sass": "sass --watch  ./src/main.scss:./public/style.css --style expanded",
+    "sass": "sass --watch  ./src/main.scss:./public/style.css --style compressed",
+    "sass-build": "sass --update ./src/main.scss:./public/style.css --style compressed",
     "build": "react-scripts build",
     "test": "react-scripts test --passWithNoTests",
     "eject": "react-scripts eject"
