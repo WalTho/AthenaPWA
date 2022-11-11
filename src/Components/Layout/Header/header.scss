@@ -16,7 +16,7 @@
         &-title{
             display: block;
             position: absolute;
-            background-color: black;
+            background-color: #1C1C1C;
             width: 100%;
             height: 100%;
             z-index: 4;
@@ -25,7 +25,7 @@
                 font-family: Nasalization;
                 text-align: center;
                 font-weight: 400;
-                font-size: 24px;
+                font-size: 35px;
                 line-height: 25px;
                 margin-top: 30px;
                 color: white;
@@ -53,6 +53,7 @@
                 transform: translateY(-120%);
                 transition: all 0.35s ease-in-out;
                 z-index: -1;
+                border-left: solid 1px transparentize($color: white, $amount: 0.50); 
                 &-item{
                     width: 100%;
                     position: relative;
@@ -60,15 +61,21 @@
                     text-align: center;
                     &:hover{
                         .header__container-nav-list-item-line{
-                            width: 40% !important;
+                            width: 35% !important;
                             background-color: white;
+                            box-shadow: 0 0 10px white;
+                        }
+                        .header__container-nav-list-item-link{
+                            color: white;
+                            filter: drop-shadow(0 0 10px white);
+                            border-left: solid 10px white;
                         }
                     }
                     &-line{
                         position: absolute;
                         background-color: transparentize($color: white, $amount: 0.50);
-                        height: 2px;
-                        width: 30%;
+                        height: 1px;
+                        width: 25vw;
                         overflow: hidden;
                         margin-top: -40px;
                         transition: all 0.3s ease-in-out;
@@ -81,10 +88,10 @@
                         font-family: AllRoundGothic;
                         transition: all 0.2s ease-in-out;
                         margin-top: -95px;
+                        margin-left: -10px;
                         padding: 40px;
-                        &:hover {
-                            color: white;
-                        }
+                        border-left: solid 0px white;
+                        transition: all 0.3s ease-in-out;
                     }
                 }
             }

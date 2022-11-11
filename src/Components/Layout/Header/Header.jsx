@@ -35,7 +35,7 @@ function Header() {
           <div className="header__container">
               <div className="header__container-title">
                   <h1 className="header__container-title-text">
-                      Athena
+                      ATHENA
                   </h1>
               </div>
               <div className="header__container-nav" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
