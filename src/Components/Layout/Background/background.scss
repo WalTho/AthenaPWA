@@ -1,7 +1,27 @@
 
 $i: white;
-
+@keyframes move {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0);
+        background-color: rgb(100, 255, 255);
+    }
+    50% {
+        transform: translate(random(3) - 1 + vh, random(3) - 1 + vh);
+        opacity: calc(random(10) / 100) + 0.5;
+        background-color: white;
+    }
+    100% {
+        background-color: orangered;
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+}
 .background{
+    display: block;
+    z-index: -1;
+    position: fixed;
+    top: 0;
     background-color: black;
     overflow: hidden;
     height:100vh;
@@ -20,23 +40,6 @@ $i: white;
             max-height: 100%;
             animation: move #{random(10) + 10}s ease-in-out infinite;
             animation-delay: calc(#{$i} * #{random(10) + 10} / 100);
-            @keyframes move {
-                0% {
-                    opacity: 0;
-                    transform: translate(0, 0);
-                    background-color: rgb(100, 255, 255);
-                }
-                50% {
-                    transform: translate(random(3) - 1 + vh, random(3) - 1 + vh);
-                    opacity: calc(random(10) / 100) + 0.5;
-                    background-color: white;
-                }
-                100% {
-                    background-color: orangered;
-                    opacity: 0;
-                    transform: translate(0, 0);
-                }
-            }
         }
     }
 }

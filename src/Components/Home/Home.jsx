@@ -1,10 +1,12 @@
 import React from "react";
-import Header from "../Layout/Header/Header.jsx";
+import DefaultCard from "../Cards/DefaultCard/DefaultCard.jsx";
 
 const Home = () => {
     return (
         <div className="home">
-            <Header />
+            <div className="home__container">
+                <DefaultCard/>
+            </div>
         </div>
     );
 }
