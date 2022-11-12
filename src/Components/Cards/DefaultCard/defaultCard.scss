@@ -9,7 +9,7 @@
         width: 80%;
         max-width: 800px;
         height: auto;
-        background-color: #25292D;
+        background-color: transparentize($color: #25292D, $amount: 0.2);
         border: 1px solid #70767B;
         border-radius: 12px;
         padding: 0 20px 40px 20px;

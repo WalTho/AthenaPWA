@@ -48,7 +48,7 @@ function Header() {
                       </li>
                       <li className="header__container-nav-list-item">
                           <div className="header__container-nav-list-item-line"></div>
-                          <a href="/" className="header__container-nav-list-item-link">
+                          <a href="/about" className="header__container-nav-list-item-link">
                               About
                           </a>
                       </li>
@@ -66,7 +66,7 @@ function Header() {
                       </li>
                       <li className="header__container-nav-list-item">
                           <div className="header__container-nav-list-item-line"></div>
-                          <a href="/" className="header__container-nav-list-item-link">
+                          <a href="/join-us" className="header__container-nav-list-item-link">
                               Join us
                           </a>
                       </li>

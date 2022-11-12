@@ -2,6 +2,8 @@
 @import './colors/colors.scss';
 
 @import './Components/Home/home.scss';
+@import './Components/About/about.scss';
+@import './Components/Join-us/join-us.scss';
 @import './Components/Layout/Background/background.scss';
 @import './Components/Layout/Header/header.scss';
 @import './Components/Layout/Footer/footer.scss';
@@ -36,5 +38,14 @@ body {
         background: #3b3b3b;
       }
     }
+  }
+}
+
+@keyframes cardFadeIn {
+  0%{
+      opacity: 0;
+  }
+  100%{
+      opacity: 100%;
   }
 }
