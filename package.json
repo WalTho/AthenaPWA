@@ -22,12 +22,14 @@
   },
   "homepage": "http://WalTho.github.io/",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start --openssl-legacy-provider",
     "sass": "sass --watch  ./src/main.scss:./public/style.css --style compressed",
     "sass-build": "sass --update ./src/main.scss:./public/style.css --style compressed",
     "build": "react-scripts build",
     "test": "react-scripts test --passWithNoTests",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
