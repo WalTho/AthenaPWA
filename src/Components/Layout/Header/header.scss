@@ -71,7 +71,7 @@
                     text-align: center;
                     &:hover{
                         .header__container-nav-list-item-line{
-                            width: 35% !important;
+                            width: 25vw !important;
                             background-color: white;
                             box-shadow: 0 0 10px white;
                         }
@@ -85,7 +85,7 @@
                         position: absolute;
                         background-color: transparentize($color: white, $amount: 0.50);
                         height: 1px;
-                        width: 25vw;
+                        width: 20vw;
                         overflow: hidden;
                         margin-top: -40px;
                         transition: all 0.3s ease-in-out;
@@ -146,7 +146,7 @@
 
 .show-nav {
     transform: translateY(0);
-    background-color: transparentize($color: black, $amount: 0.95);
+    background-color: transparentize($color: black, $amount: 0.4);
     backdrop-filter: blur(5px);
     opacity: 1;
     height: 100vh !important;
