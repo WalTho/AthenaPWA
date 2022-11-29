@@ -5,9 +5,7 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "feat/athenaPWA-v0.0.1a" ]
   pull_request:
-    branches: [ "feat/athenaPWA-v0.0.1a" ]
 
 jobs:
   build:
