@@ -43,13 +43,13 @@ function Header() {
                       <li className="header__container-nav-list-item">
                           <div className="header__container-nav-list-item-line"></div>
                           <a href="/" className="header__container-nav-list-item-link">
-                              Home
+                              Accueil
                           </a>
                       </li>
                       <li className="header__container-nav-list-item">
                           <div className="header__container-nav-list-item-line"></div>
-                          <a href="/" className="header__container-nav-list-item-link">
-                              About
+                          <a href="/about" className="header__container-nav-list-item-link">
+                              À propos
                           </a>
                       </li>
                       <li className="header__container-nav-list-item">
@@ -66,12 +66,12 @@ function Header() {
                       </li>
                       <li className="header__container-nav-list-item">
                           <div className="header__container-nav-list-item-line"></div>
-                          <a href="/" className="header__container-nav-list-item-link">
-                              Join us
+                          <a href="/join-us" className="header__container-nav-list-item-link">
+                              Rejoignez-nous
                           </a>
                       </li>
                   </ul>
-                  <button className="header__container-nav-button" onClick={handleShowLinks} tabIndex="1">
+                  <button className="header__container-nav-button" onClick={handleShowLinks} tabIndex="1" aria-label="Menu">
                       <i className={`fa-solid ${showLinks ? "fa-chevron-up" : "fa-chevron-down"}`}></i>
                   </button>
               </div>
