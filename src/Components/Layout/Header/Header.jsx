@@ -54,8 +54,8 @@ function Header() {
                       </li>
                       <li className="header__container-nav-list-item">
                           <div className="header__container-nav-list-item-line"></div>
-                          <a href="/" className="header__container-nav-list-item-link">
-                              Medias
+                          <a href="/maps" className="header__container-nav-list-item-link">
+                              Maps
                           </a>
                       </li>
                       <li className="header__container-nav-list-item">

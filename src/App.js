@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Components/Home/Home.jsx";
 import About from "./Components/About/About.jsx";
+import Maps from "./Components/Maps/Maps.jsx";
 import JoinUs from "./Components/Join-us/JoinUs.jsx";
 import Background from "./Components/Layout/Background/Background.jsx";
 import Loader from "./Components/Layout/Loader/Loader.jsx";
@@ -29,6 +30,7 @@ const App = () => {
                     <Routes>
                         <Route path="/" element={ <Home/> } />
                         <Route path="/about" element={ <About/> } />
+                        <Route path="/maps" element={ <Maps/> } />
                         <Route path="/join-us" element={ <JoinUs/> } />
                     </Routes>
                 </BrowserRouter>
