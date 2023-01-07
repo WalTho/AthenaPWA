@@ -1,5 +1,9 @@
 import React from "react";
 
+import ValidButton from "../../Buttons/ValidButton.jsx";
+import CancelButton from "../../Buttons/CancelButton.jsx";
+import LinkButton from "../../Buttons/LinkButton.jsx";
+
 const DefaultCard = () => {
     return (
         <div className="default-card">
@@ -13,6 +17,9 @@ const DefaultCard = () => {
                 <p className="default-card__container-secondText">
                     Nam mattis eleifend elit, nec tempor enim. In hac habitasse platea dictumst. Curabitur condimentum ipsum sit amet semper suscipit. Vestibulum consectetur sapien in massa condimentum, et porttitor magna interdum. Duis eget mollis odio, quis aliquam nunc. Vivamus elementum turpis sed ullamcorper commodo. Nulla lobortis ultricies massa nec efficitur. Quisque iaculis est dui, a aliquet mi fermentum id. Morbi in sem finibus, lobortis tortor sit amet, elementum ligula.
                 </p>
+                <ValidButton/>
+                <CancelButton/>
+                <LinkButton/>
             </div>
         </div>
     );
