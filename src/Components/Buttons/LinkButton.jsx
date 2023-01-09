@@ -1,10 +1,17 @@
 import React from "react";
+import uuid from 'react-uuid';
 
-const LinkButton = () => {
+const LinkButton = (props) => {
+    const {Label, Link} = props;
+    const unique_id = uuid();
     return (
-        <div className="link-button">
-            <a className="link-button-text" href="/">
-                Link
+        <div className="link-button" key={unique_id}>
+            <a 
+                className="link-button-text"
+                key={unique_id} 
+                href={Link === undefined ? '/': Link}
+            >
+               {Label === undefined ? 'Link': Label}
             </a>
         </div>
     )

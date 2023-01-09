@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Components/Home/Home.jsx";
 import About from "./Components/About/About.jsx";
 import JoinUs from "./Components/Join-us/JoinUs.jsx";
+import Login from "./Components/Admin/Login/Login.jsx";
 import Background from "./Components/Layout/Background/Background.jsx";
 import Loader from "./Components/Layout/Loader/Loader.jsx";
 import Header from "./Components/Layout/Header/Header.jsx";
@@ -27,9 +28,10 @@ const App = () => {
             ) : (
                 <BrowserRouter>
                     <Routes>
-                        <Route path="/" element={ <Home/> } />
-                        <Route path="/about" element={ <About/> } />
-                        <Route path="/join-us" element={ <JoinUs/> } />
+                            <Route path="/" element={<Home />} />
+                            <Route path="/about" element={<About />} />
+                            <Route path="/join-us" element={<JoinUs />} />
+                            <Route path="/login" element={<Login />} />
                     </Routes>
                 </BrowserRouter>
             )}

@@ -17,14 +17,14 @@
             padding: 40px 0 40px 0;
             font-family: Nasalization;
             font-size: 25px;
-            color: #BBC3C9;
+            color: $light-gray;
             font-style: normal;
             font-weight: 400;
             text-align: center;
         }
         &-firstText{
             font-family: AllRoundGothic;
-            color: #BBC3C9;
+            color: $light-gray;
             font-style: normal;
             font-weight: 200;
             font-size: 18px;
@@ -33,7 +33,7 @@
         }
         &-secondText{
             font-family: AllRoundGothic;
-            color: #BBC3C9;
+            color: $light-gray;
             font-style: normal;
             font-weight: 200;
             font-size: 18px;
