@@ -8,7 +8,7 @@ const ValidButton = (props) => {
             <a 
                 className="valid-button-text" 
                 key={unique_id} 
-                href={props.Link ??= '/'}
+                href={props?.Link ?? '/'}
             >
                {props?.Label}
             </a>
