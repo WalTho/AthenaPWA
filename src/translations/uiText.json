@@ -1,5 +1,13 @@
 {
   "UI": {
+    "header": {
+      "title": "ATHENA",
+      "home": "Accueil",
+      "about": "À propos",
+      "maps": "Maps",
+      "infos": "Infos",
+      "joinUs": "Rejoignez-nous"
+    },
     "btn": {
       "login": "Se connecter",
       "back": "Retour"
