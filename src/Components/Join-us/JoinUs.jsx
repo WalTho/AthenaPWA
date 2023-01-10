@@ -10,10 +10,10 @@ const JoinUs = () => {
                     REJOIGNEZ-NOUS !
                 </h1>
                 <h2 className="join-us__container-showcase">Aperçu de notre discord :</h2>
-                <DiscordWidget 
+                <DiscordWidget
                     className="join-us__container-discord"
-                    server="" 
-                    channel="" 
+                    server=""
+                    channel=""
                 />
                 <h2 className="join-us__container-showcase">Aperçu de notre serveur :</h2>
                 <TwitchWidget

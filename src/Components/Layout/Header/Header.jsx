@@ -8,17 +8,17 @@ function Header() {
 
     const uiText = uiTranslation;
 
-    //handle nav list
     const [showLinks, setShowLinks] = useState(false)
     const handleShowLinks = () => {
         setShowLinks(!showLinks)
     }
-    //handle swipe
+
     const [touchPosition, setTouchPosition] = useState(null)
     const handleTouchStart = (e) => {
         const touchDown = e.touches[0].clientY
         setTouchPosition(touchDown)
     }
+
     const handleTouchMove = (e) => {
         const touchDown = touchPosition
         if(touchDown === null) {
