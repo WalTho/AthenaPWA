@@ -10,7 +10,7 @@ const DefaultCard = (props) => {
                 </h1>
                 <p className="default-card__container-firstText" >
                     {P1}
-                 </p>
+                </p>
                 <p className="default-card__container-secondText">
                     {P2}
                 </p>
