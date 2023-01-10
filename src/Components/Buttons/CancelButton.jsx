@@ -2,16 +2,15 @@ import React from "react";
 import uuid from 'react-uuid';
 
 const CancelButton = (props) => {
-    const {Label, Link} = props;
     const unique_id = uuid();
     return(
         <div className="cancel-button" key={unique_id}>
             <a 
                 className="cancel-button-text" 
                 key={unique_id} 
-                href={Link === undefined ? '/': Link}
+                href={props?.Link ?? '/'}
             >
-                {Label === undefined ? 'Cancel': Label}
+               {props?.Label}
             </a>
         </div>
     )
