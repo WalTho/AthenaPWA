@@ -5,12 +5,12 @@ const LinkButton = (props) => {
     const unique_id = uuid();
     return (
         <div className="link-button" key={unique_id}>
-            <a 
+            <a
                 className="link-button-text"
-                key={unique_id} 
+                key={unique_id}
                 href={props?.Link ?? '/'}
             >
-               {props?.Label}
+                {props?.Label}
             </a>
         </div>
     )

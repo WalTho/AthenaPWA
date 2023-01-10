@@ -31,17 +31,17 @@
 }
 
 @mixin validButton {
-   @include baseButton;
+    @include baseButton;
     background-color: $green;
-} 
+}
 
 @mixin cancelButton {
-   @include baseButton;
+    @include baseButton;
     background-color: $red;
-} 
+}
 
 @mixin linkButton {
-   @include baseButton;
+    @include baseButton;
     background-color: $blue;
     &-text{
         color: $gray-blue;
@@ -52,4 +52,4 @@
             color: $gray-blue;
         }
     }
-} 
+}
