@@ -9,9 +9,9 @@ const ValidButton = (props) => {
             <a 
                 className="valid-button-text" 
                 key={unique_id} 
-                href={Link === undefined ? '/': Link}
+                href={props?.Link ?? '/'}
             >
-              {Label === undefined ? 'Valid': Label}
+               {props?.Label}
             </a>
         </div>
      )
