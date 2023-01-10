@@ -13,6 +13,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",
     "react-twitch-embed": "^3.0.1",
+    "react-uuid": "^2.0.0",
     "sass": "^1.50.1",
     "web-vitals": "^2.1.4"
   },
@@ -54,9 +55,9 @@
   ],
   "license": "ISC",
   "devDependencies": {
-    "gh-pages": "^4.0.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
-    "@testing-library/user-event": "^13.5.0"
+    "@testing-library/user-event": "^13.5.0",
+    "gh-pages": "^4.0.0"
   }
 }

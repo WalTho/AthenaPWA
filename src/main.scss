@@ -1,5 +1,6 @@
-@import './fonts/fonts.scss';
-@import './colors/colors.scss';
+@import './utils/fonts.scss';
+@import './utils/colors.scss';
+@import './utils/buttons.scss';
 
 @import './Components/Home/home.scss';
 @import './Components/Layout/Background/background.scss';
@@ -9,6 +10,7 @@
 @import './Components/Join-us/join-us.scss';
 @import './Components/Maps/maps.scss';
 @import './Components/Cards/DefaultCard/defaultCard.scss';
+@import './Components/Admin/Login/login.scss';
 
 *{
   box-sizing: border-box;

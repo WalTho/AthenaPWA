@@ -4,6 +4,7 @@ import Home from "./Components/Home/Home.jsx";
 import About from "./Components/About/About.jsx";
 import Maps from "./Components/Maps/Maps.jsx";
 import JoinUs from "./Components/Join-us/JoinUs.jsx";
+import Login from "./Components/Admin/Login/Login.jsx";
 import Background from "./Components/Layout/Background/Background.jsx";
 import Loader from "./Components/Layout/Loader/Loader.jsx";
 import Header from "./Components/Layout/Header/Header.jsx";
@@ -31,7 +32,8 @@ const App = () => {
                         <Route path="/" element={ <Home/> } />
                         <Route path="/about" element={ <About/> } />
                         <Route path="/maps" element={ <Maps/> } />
-                        <Route path="/join-us" element={ <JoinUs/> } />
+                        <Route path="/join-us" element={<JoinUs />} />
+                        <Route path="/login" element={<Login />} />
                     </Routes>
                 </BrowserRouter>
             )}
