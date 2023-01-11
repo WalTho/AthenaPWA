@@ -20,6 +20,15 @@
     "login": {
       "title": "Connexion admin",
       "text": "Si vous êtes Admin sur nos serveurs, cliquez sur le bouton ‘Se connecter’, sinon sur le bouton ‘Retour’, merci !"
+    },
+    "mapSelector": {
+      "title": "Cartes des systèmes",
+      "text": "",
+      "btn": {
+        "centauri": "Centauri",
+        "orion": "Orion",
+        "event": "???"
+      }
     }
   }
 }
