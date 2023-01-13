@@ -1,23 +1,10 @@
 import React, { useState } from "react";
 import MapTranslation from "../../translation/map.json";
+import ModalCard from "../Cards/ModalCard/ModalCard";
 
 const tMap = MapTranslation;
 
 const Maps = () => {
-
-    // Copy GPS
-    const [popupClass, setPopupClass] = useState("");
-
-    function copied() {
-        setPopupClass("show");
-        setTimeout(function() {
-            setPopupClass("");
-        }, 1000);
-    }
-    function copyGPS(text) {
-        navigator.clipboard.writeText(text);
-        copied();
-    }
 
     // Modal
     const [showAvernusModal, setShowAvernusModal] = useState(false);
@@ -34,7 +21,7 @@ const Maps = () => {
     const [showEuropaModal, setShowEuropaModal] = useState(false);
     const [showAlienModal, setShowAlienModal] = useState(false);
     const [showWormholeModal, setShowWormholeModal] = useState(false);
-
+    
     function toggleModal(name) {
         setShowAvernusModal(false);
         setShowTritonModal(false);
@@ -106,1284 +93,116 @@ const Maps = () => {
             </div>
             <div className="maps">
                 { showAvernusModal && (
-                    <div id="ModalAvernus" className="modal show">
-                        <div className="modal-content">
-                            <span id="CloseModalAvernus" className="close" onClick={toggleModal}>&times;</span>
-                            <p className="modal-content-title">{tMap.planets.avernus.title}</p>
-                            <img className="modal-content-img" src={tMap.planets.avernus.image} alt="" />
-                            <p className="modal-content-firstText">
-                                {tMap.planets.avernus.description}
-                            </p>
-                            <div className="modal-content-secondText">
-                                <ul className="modal-content-secondText-list">
-                                    <li className="modal-content-secondText-list-item">
-                                        <div className="modal-content-secondText-list-item-gps popup">
-                                            <span className="modal-content-secondText-list-item-gps-title">
-                                                {tMap.titles["gps-title"]}
-                                            </span>
-                                            <span
-                                                className="modal-content-secondText-list-item-gps-content"
-                                                onClick={window.onload = function() {copyGPS(tMap.planets.avernus.gps)}}
-                                            >
-                                                {tMap.planets.avernus.gps}
-                                            </span>
-                                            <span className={`popuptext ${popupClass}`} id="myPopup">
-                                                {tMap.copy}
-                                            </span>
-                                        </div>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["size-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.avernus.size}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["gravity-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.avernus.gravity}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["atmosphere-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.avernus.atmosphere}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["ore-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.avernus.ore}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["ice-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.avernus.ice}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["fauna-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.avernus.fauna}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["weather-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.avernus.weather}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["temperature-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.avernus.temperature}
-                                            </span>
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <ModalCard 
+                        modalName = "ModalAvernus"
+                        onClickToggleModal = {toggleModal}
+                        planet = {tMap.planets.avernus}
+                        tMap = {tMap}
+                    />
                 ) }
                 {showTritonModal && (
-                    <div id="ModalTriton" className="modal show">
-                        <div className="modal-content">
-                            <span id="CloseModalTriton" className="close" onClick={toggleModal}>&times;</span>
-                            <p className="modal-content-title">{tMap.planets.triton.title}</p>
-                            <img className="modal-content-img" src={tMap.planets.triton.image} alt="" />
-                            <p className="modal-content-firstText">
-                                {tMap.planets.triton.description}
-                            </p>
-                            <div className="modal-content-secondText">
-                                <ul className="modal-content-secondText-list">
-                                    <li className="modal-content-secondText-list-item">
-                                        <div className="modal-content-secondText-list-item-gps popup">
-                                            <span className="modal-content-secondText-list-item-gps-title">
-                                                {tMap.titles["gps-title"]}
-                                            </span>
-                                            <span
-                                                className="modal-content-secondText-list-item-gps-content"
-                                                onClick={window.onload = function() {copyGPS(tMap.planets.triton.gps)}}
-                                            >
-                                                {tMap.planets.triton.gps}
-                                            </span>
-                                            <span className={`popuptext ${popupClass}`} id="myPopup">
-                                                {tMap.copy}
-                                            </span>
-                                        </div>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["size-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.triton.size}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["gravity-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.triton.gravity}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["atmosphere-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.triton.atmosphere}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["ore-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.triton.ore}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["ice-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.triton.ice}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["fauna-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.triton.fauna}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["weather-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.triton.weather}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["temperature-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.triton.temperature}
-                                            </span>
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <ModalCard 
+                        modalName = "ModalTriton"
+                        onClickToggleModal = {toggleModal}
+                        planet = {tMap.planets.triton}
+                        tMap = {tMap}
+                    />
                 )}
                 {showOverventModal && (
-                    <div id="ModalOvervent" className="modal show">
-                        <div className="modal-content">
-                            <span id="CloseModalOvervent" className="close" onClick={toggleModal}>&times;</span>
-                            <p className="modal-content-title">{tMap.planets.overvent.title}</p>
-                            <img className="modal-content-img" src={tMap.planets.overvent.image} alt="" />
-                            <p className="modal-content-firstText">
-                                {tMap.planets.overvent.description}
-                            </p>
-                            <div className="modal-content-secondText">
-                                <ul className="modal-content-secondText-list">
-                                    <li className="modal-content-secondText-list-item">
-                                        <div className="modal-content-secondText-list-item-gps popup">
-                                            <span className="modal-content-secondText-list-item-gps-title">
-                                                {tMap.titles["gps-title"]}
-                                            </span>
-                                            <span
-                                                className="modal-content-secondText-list-item-gps-content"
-                                                onClick={window.onload = function() {copyGPS(tMap.planets.overvent.gps)}}
-                                            >
-                                                {tMap.planets.overvent.gps}
-                                            </span>
-                                            <span className={`popuptext ${popupClass}`} id="myPopup">
-                                                {tMap.copy}
-                                            </span>
-                                        </div>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["size-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.overvent.size}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["gravity-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.overvent.gravity}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["atmosphere-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.overvent.atmosphere}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["ore-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.overvent.ore}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["ice-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.overvent.ice}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["fauna-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.overvent.fauna}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["weather-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.overvent.weather}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["temperature-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.overvent.temperature}
-                                            </span>
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <ModalCard 
+                        modalName = "ModalOvervent"
+                        onClickToggleModal = {toggleModal}
+                        planet = {tMap.planets.overvent}
+                        tMap = {tMap}
+                    />
                 )}
                 {showRothisModal && (
-                    <div id="ModalRothis" className="modal show">
-                        <div className="modal-content">
-                            <span id="CloseModalRothis" className="close" onClick={toggleModal}>&times;</span>
-                            <p className="modal-content-title">{tMap.planets.rothis.title}</p>
-                            <img className="modal-content-img" src={tMap.planets.rothis.image} alt="" />
-                            <p className="modal-content-firstText">
-                                {tMap.planets.rothis.description}
-                            </p>
-                            <div className="modal-content-secondText">
-                                <ul className="modal-content-secondText-list">
-                                    <li className="modal-content-secondText-list-item">
-                                        <div className="modal-content-secondText-list-item-gps popup">
-                                            <span className="modal-content-secondText-list-item-gps-title">
-                                                {tMap.titles["gps-title"]}
-                                            </span>
-                                            <span
-                                                className="modal-content-secondText-list-item-gps-content"
-                                                onClick={window.onload = function() {copyGPS(tMap.planets.rothis.gps)}}
-                                            >
-                                                {tMap.planets.rothis.gps}
-                                            </span>
-                                            <span className={`popuptext ${popupClass}`} id="myPopup">
-                                                {tMap.copy}
-                                            </span>
-                                        </div>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["size-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.rothis.size}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["gravity-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.rothis.gravity}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["atmosphere-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.rothis.atmosphere}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["ore-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.rothis.ore}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["ice-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.rothis.ice}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["fauna-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.rothis.fauna}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["weather-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.rothis.weather}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["temperature-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.rothis.temperature}
-                                            </span>
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <ModalCard 
+                        modalName = "ModalRothis"
+                        onClickToggleModal = {toggleModal}
+                        planet = {tMap.planets.rothis}
+                        tMap = {tMap}
+                    />
                 )}
                 {showTerraModal && (
-                    <div id="ModalTerra" className="modal show">
-                        <div className="modal-content">
-                            <span id="CloseModalTerra" className="close" onClick={toggleModal}>&times;</span>
-                            <p className="modal-content-title">{tMap.planets.terra.title}</p>
-                            <img className="modal-content-img" src={tMap.planets.terra.image} alt="" />
-                            <p className="modal-content-firstText">
-                                {tMap.planets.terra.description}
-                            </p>
-                            <div className="modal-content-secondText">
-                                <ul className="modal-content-secondText-list">
-                                    <li className="modal-content-secondText-list-item">
-                                        <div className="modal-content-secondText-list-item-gps popup">
-                                            <span className="modal-content-secondText-list-item-gps-title">
-                                                {tMap.titles["gps-title"]}
-                                            </span>
-                                            <span
-                                                className="modal-content-secondText-list-item-gps-content"
-                                                onClick={window.onload = function() {copyGPS(tMap.planets.terra.gps)}}
-                                            >
-                                                {tMap.planets.terra.gps}
-                                            </span>
-                                            <span className={`popuptext ${popupClass}`} id="myPopup">
-                                                {tMap.copy}
-                                            </span>
-                                        </div>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["size-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.terra.size}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["gravity-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.terra.gravity}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["atmosphere-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.terra.atmosphere}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["ore-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.terra.ore}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["ice-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.terra.ice}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["fauna-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.terra.fauna}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["weather-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.terra.weather}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["temperature-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.terra.temperature}
-                                            </span>
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <ModalCard 
+                        modalName = "ModalTerra"
+                        onClickToggleModal = {toggleModal}
+                        planet = {tMap.planets.terra}
+                        tMap = {tMap}
+                    />
                 )}
                 {showExoliaModal && (
-                    <div id="ModalExolia" className="modal show">
-                        <div className="modal-content">
-                            <span id="CloseModalExolia" className="close" onClick={toggleModal}>&times;</span>
-                            <p className="modal-content-title">{tMap.planets.exolia.title}</p>
-                            <img className="modal-content-img" src={tMap.planets.exolia.image} alt="" />
-                            <p className="modal-content-firstText">
-                                {tMap.planets.exolia.description}
-                            </p>
-                            <div className="modal-content-secondText">
-                                <ul className="modal-content-secondText-list">
-                                    <li className="modal-content-secondText-list-item">
-                                        <div className="modal-content-secondText-list-item-gps popup">
-                                            <span className="modal-content-secondText-list-item-gps-title">
-                                                {tMap.titles["gps-title"]}
-                                            </span>
-                                            <span
-                                                className="modal-content-secondText-list-item-gps-content"
-                                                onClick={window.onload = function() {copyGPS(tMap.planets.exolia.gps)}}
-                                            >
-                                                {tMap.planets.exolia.gps}
-                                            </span>
-                                            <span className={`popuptext ${popupClass}`} id="myPopup">
-                                                {tMap.copy}
-                                            </span>
-                                        </div>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["size-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.exolia.size}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["gravity-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.exolia.gravity}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["atmosphere-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.exolia.atmosphere}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["ore-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.exolia.ore}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["ice-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.exolia.ice}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["fauna-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.exolia.fauna}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["weather-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.exolia.weather}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["temperature-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.exolia.temperature}
-                                            </span>
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <ModalCard 
+                        modalName = "ModalExolia"
+                        onClickToggleModal = {toggleModal}
+                        planet = {tMap.planets.exolia}
+                        tMap = {tMap}
+                    />
                 )}
                 {showTreossaModal && (
-                    <div id="ModalTreossa" className="modal show">
-                        <div className="modal-content">
-                            <span id="CloseModalTreossa" className="close" onClick={toggleModal}>&times;</span>
-                            <p className="modal-content-title">{tMap.planets.treossa.title}</p>
-                            <img className="modal-content-img" src={tMap.planets.treossa.image} alt="" />
-                            <p className="modal-content-firstText">
-                                {tMap.planets.treossa.description}
-                            </p>
-                            <div className="modal-content-secondText">
-                                <ul className="modal-content-secondText-list">
-                                    <li className="modal-content-secondText-list-item">
-                                        <div className="modal-content-secondText-list-item-gps popup">
-                                            <span className="modal-content-secondText-list-item-gps-title">
-                                                {tMap.titles["gps-title"]}
-                                            </span>
-                                            <span
-                                                className="modal-content-secondText-list-item-gps-content"
-                                                onClick={window.onload = function() {copyGPS(tMap.planets.treossa.gps)}}
-                                            >
-                                                {tMap.planets.treossa.gps}
-                                            </span>
-                                            <span className={`popuptext ${popupClass}`} id="myPopup">
-                                                {tMap.copy}
-                                            </span>
-                                        </div>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["size-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.treossa.size}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["gravity-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.treossa.gravity}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["atmosphere-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.treossa.atmosphere}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["ore-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.treossa.ore}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["ice-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.treossa.ice}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["fauna-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.treossa.fauna}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["weather-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.treossa.weather}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["temperature-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.treossa.temperature}
-                                            </span>
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <ModalCard 
+                        modalName = "ModalTreossa"
+                        onClickToggleModal = {toggleModal}
+                        planet = {tMap.planets.treossa}
+                        tMap = {tMap}
+                    />
                 )}
                 {showPertamModal && (
-                    <div id="ModalPertam" className="modal show">
-                        <div className="modal-content">
-                            <span id="CloseModalPertam" className="close" onClick={toggleModal}>&times;</span>
-                            <p className="modal-content-title">{tMap.planets.pertam.title}</p>
-                            <img className="modal-content-img" src={tMap.planets.pertam.image} alt="" />
-                            <p className="modal-content-firstText">
-                                {tMap.planets.pertam.description}
-                            </p>
-                            <div className="modal-content-secondText">
-                                <ul className="modal-content-secondText-list">
-                                    <li className="modal-content-secondText-list-item">
-                                        <div className="modal-content-secondText-list-item-gps popup">
-                                            <span className="modal-content-secondText-list-item-gps-title">
-                                                {tMap.titles["gps-title"]}
-                                            </span>
-                                            <span
-                                                className="modal-content-secondText-list-item-gps-content"
-                                                onClick={window.onload = function() {copyGPS(tMap.planets.pertam.gps)}}
-                                            >
-                                                {tMap.planets.pertam.gps}
-                                            </span>
-                                            <span className={`popuptext ${popupClass}`} id="myPopup">
-                                                {tMap.copy}
-                                            </span>
-                                        </div>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["size-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.pertam.size}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["gravity-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.pertam.gravity}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["atmosphere-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.pertam.atmosphere}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["ore-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.pertam.ore}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["ice-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.pertam.ice}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["fauna-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.pertam.fauna}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["weather-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.pertam.weather}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["temperature-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.pertam.temperature}
-                                            </span>
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <ModalCard 
+                        modalName = "ModalPertam"
+                        onClickToggleModal = {toggleModal}
+                        planet = {tMap.planets.pertam}
+                        tMap = {tMap}
+                    />
                 )}
                 {showTitanModal && (
-                    <div id="ModalTitan" className="modal show">
-                        <div className="modal-content">
-                            <span id="CloseModalTitan" className="close" onClick={toggleModal}>&times;</span>
-                            <p className="modal-content-title">{tMap.planets.titan.title}</p>
-                            <img className="modal-content-img" src={tMap.planets.titan.image} alt="" />
-                            <p className="modal-content-firstText">
-                                {tMap.planets.titan.description}
-                            </p>
-                            <div className="modal-content-secondText">
-                                <ul className="modal-content-secondText-list">
-                                    <li className="modal-content-secondText-list-item">
-                                        <div className="modal-content-secondText-list-item-gps popup">
-                                            <span className="modal-content-secondText-list-item-gps-title">
-                                                {tMap.titles["gps-title"]}
-                                            </span>
-                                            <span
-                                                className="modal-content-secondText-list-item-gps-content"
-                                                onClick={window.onload = function() {copyGPS(tMap.planets.titan.gps)}}
-                                            >
-                                                {tMap.planets.titan.gps}
-                                            </span>
-                                            <span className={`popuptext ${popupClass}`} id="myPopup">
-                                                {tMap.copy}
-                                            </span>
-                                        </div>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["size-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.titan.size}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["gravity-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.titan.gravity}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["atmosphere-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.titan.atmosphere}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["ore-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.titan.ore}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["ice-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.titan.ice}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["fauna-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.titan.fauna}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["weather-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.titan.weather}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["temperature-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.titan.temperature}
-                                            </span>
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <ModalCard 
+                        modalName = "ModalTitan"
+                        onClickToggleModal = {toggleModal}
+                        planet = {tMap.planets.titan}
+                        tMap = {tMap}
+                    />
                 )}
                 {showLunaModal && (
-                    <div id="ModalLuna" className="modal show">
-                        <div className="modal-content">
-                            <span id="CloseModalLuna" className="close" onClick={toggleModal}>&times;</span>
-                            <p className="modal-content-title">{tMap.planets.luna.title}</p>
-                            <img className="modal-content-img" src={tMap.planets.luna.image} alt="" />
-                            <p className="modal-content-firstText">
-                                {tMap.planets.luna.description}
-                            </p>
-                            <div className="modal-content-secondText">
-                                <ul className="modal-content-secondText-list">
-                                    <li className="modal-content-secondText-list-item">
-                                        <div className="modal-content-secondText-list-item-gps popup">
-                                            <span className="modal-content-secondText-list-item-gps-title">
-                                                {tMap.titles["gps-title"]}
-                                            </span>
-                                            <span
-                                                className="modal-content-secondText-list-item-gps-content"
-                                                onClick={window.onload = function() {copyGPS(tMap.planets.luna.gps)}}
-                                            >
-                                                {tMap.planets.luna.gps}
-                                            </span>
-                                            <span className={`popuptext ${popupClass}`} id="myPopup">
-                                                {tMap.copy}
-                                            </span>
-                                        </div>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["size-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.luna.size}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["gravity-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.luna.gravity}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["atmosphere-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.luna.atmosphere}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["ore-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.luna.ore}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["ice-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.luna.ice}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["fauna-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.luna.fauna}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["weather-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.luna.weather}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["temperature-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.luna.temperature}
-                                            </span>
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <ModalCard 
+                        modalName = "ModalLuna"
+                        onClickToggleModal = {toggleModal}
+                        planet = {tMap.planets.luna}
+                        tMap = {tMap}
+                    />
                 )}
                 {showMarsModal && (
-                    <div id="ModalMars" className="modal show">
-                        <div className="modal-content">
-                            <span id="CloseModalMars" className="close" onClick={toggleModal}>&times;</span>
-                            <p className="modal-content-title">{tMap.planets.mars.title}</p>
-                            <img className="modal-content-img" src={tMap.planets.mars.image} alt="" />
-                            <p className="modal-content-firstText">
-                                {tMap.planets.mars.description}
-                            </p>
-                            <div className="modal-content-secondText">
-                                <ul className="modal-content-secondText-list">
-                                    <li className="modal-content-secondText-list-item">
-                                        <div className="modal-content-secondText-list-item-gps popup">
-                                            <span className="modal-content-secondText-list-item-gps-title">
-                                                {tMap.titles["gps-title"]}
-                                            </span>
-                                            <span
-                                                className="modal-content-secondText-list-item-gps-content"
-                                                onClick={window.onload = function() {copyGPS(tMap.planets.mars.gps)}}
-                                            >
-                                                {tMap.planets.mars.gps}
-                                            </span>
-                                            <span className={`popuptext ${popupClass}`} id="myPopup">
-                                                {tMap.copy}
-                                            </span>
-                                        </div>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["size-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.mars.size}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["gravity-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.mars.gravity}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["atmosphere-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.mars.atmosphere}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["ore-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.mars.ore}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["ice-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.mars.ice}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["fauna-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.mars.fauna}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["weather-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.mars.weather}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["temperature-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.mars.temperature}
-                                            </span>
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <ModalCard 
+                        modalName = "ModalMars"
+                        onClickToggleModal = {toggleModal}
+                        planet = {tMap.planets.mars}
+                        tMap = {tMap}
+                    />
                 )}
                 {showEuropaModal && (
-                    <div id="ModalEuropa" className="modal show">
-                        <div className="modal-content">
-                            <span id="CloseModalEuropa" className="close" onClick={toggleModal}>&times;</span>
-                            <p className="modal-content-title">{tMap.planets.europa.title}</p>
-                            <img className="modal-content-img" src={tMap.planets.europa.image} alt="" />
-                            <p className="modal-content-firstText">
-                                {tMap.planets.europa.description}
-                            </p>
-                            <div className="modal-content-secondText">
-                                <ul className="modal-content-secondText-list">
-                                    <li className="modal-content-secondText-list-item">
-                                        <div className="modal-content-secondText-list-item-gps popup">
-                                            <span className="modal-content-secondText-list-item-gps-title">
-                                                {tMap.titles["gps-title"]}
-                                            </span>
-                                            <span
-                                                className="modal-content-secondText-list-item-gps-content"
-                                                onClick={window.onload = function() {copyGPS(tMap.planets.europa.gps)}}
-                                            >
-                                                {tMap.planets.europa.gps}
-                                            </span>
-                                            <span className={`popuptext ${popupClass}`} id="myPopup">
-                                                {tMap.copy}
-                                            </span>
-                                        </div>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["size-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.europa.size}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["gravity-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.europa.gravity}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["atmosphere-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.europa.atmosphere}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["ore-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.europa.ore}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["ice-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.europa.ice}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["fauna-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.europa.fauna}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["weather-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.europa.weather}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["temperature-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.europa.temperature}
-                                            </span>
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <ModalCard 
+                        modalName = "ModalEuropa"
+                        onClickToggleModal = {toggleModal}
+                        planet = {tMap.planets.europa}
+                        tMap = {tMap}
+                    />
                 )}
                 {showAlienModal && (
-                    <div id="ModalAlien" className="modal show">
-                        <div className="modal-content">
-                            <span id="CloseModalAlien" className="close" onClick={toggleModal}>&times;</span>
-                            <p className="modal-content-title">{tMap.planets.alien.title}</p>
-                            <img className="modal-content-img" src={tMap.planets.alien.image} alt="" />
-                            <p className="modal-content-firstText">
-                                {tMap.planets.alien.description}
-                            </p>
-                            <div className="modal-content-secondText">
-                                <ul className="modal-content-secondText-list">
-                                    <li className="modal-content-secondText-list-item">
-                                        <div className="modal-content-secondText-list-item-gps popup">
-                                            <span className="modal-content-secondText-list-item-gps-title">
-                                                {tMap.titles["gps-title"]}
-                                            </span>
-                                            <span
-                                                className="modal-content-secondText-list-item-gps-content"
-                                                onClick={window.onload = function() {copyGPS(tMap.planets.alien.gps)}}
-                                            >
-                                                {tMap.planets.alien.gps}
-                                            </span>
-                                            <span className={`popuptext ${popupClass}`} id="myPopup">
-                                                {tMap.copy}
-                                            </span>
-                                        </div>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["size-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.alien.size}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["gravity-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.alien.gravity}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["atmosphere-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.alien.atmosphere}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["ore-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.alien.ore}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["ice-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.alien.ice}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["fauna-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.alien.fauna}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["weather-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.alien.weather}
-                                            </span>
-                                        </p>
-                                    </li>
-                                    <li className="modal-content-secondText-list-item">
-                                        <p className="modal-content-secondText-list-item-text">
-                                            {tMap.titles["temperature-title"]}
-                                            <span className="modal-content-secondText-list-item-text-data">
-                                                {tMap.planets.alien.temperature}
-                                            </span>
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <ModalCard 
+                        modalName = "ModalAlien"
+                        onClickToggleModal = {toggleModal}
+                        planet = {tMap.planets.alien}
+                        tMap = {tMap}
+                    />
                 )}
                 {showWormholeModal && (
-                    <div id="ModalWormhole" className="modal show">
-                        <div className="modal-content">
-                            <span id="CloseModalWormhole" className="close" onClick={toggleModal}>&times;</span>
-                            <p className="modal-content-title">{tMap.planets.wormhole.title}</p>
-                            <img className="modal-content-img" src={tMap.planets.wormhole.image} alt="" />
-                            <p className="modal-content-firstText">
-                                {tMap.planets.wormhole.description}
-                            </p>
-                            <div className="modal-content-secondText">
-                                <ul className="modal-content-secondText-list">
-                                    <li className="modal-content-secondText-list-item">
-                                        <div className="modal-content-secondText-list-item-gps popup">
-                                            <span className="modal-content-secondText-list-item-gps-title">
-                                                {tMap.titles["gps-title"]}
-                                            </span>
-                                            <span
-                                                className="modal-content-secondText-list-item-gps-content"
-                                                onClick={window.onload = function() {copyGPS(tMap.planets.wormhole.gps)}}
-                                            >
-                                                {tMap.planets.wormhole.gps}
-                                            </span>
-                                            <span className={`popuptext ${popupClass}`} id="myPopup">
-                                                {tMap.copy}
-                                            </span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <ModalCard 
+                        modalName = "ModalWormhole"
+                        onClickToggleModal = {toggleModal}
+                        planet = {tMap.planets.wormhole}
+                        tMap = {tMap}
+                    />
                 )}
                 <svg width="1080" height="1080" viewBox="0 0 1080 1080" fill="none"
                     xmlns="http://www.w3.org/2000/svg" className="maps-svg"
@@ -1571,11 +390,7 @@ const Maps = () => {
                         </radialGradient>
                     </defs>
                 </svg>
-
             </div>
-            <script>
-
-            </script>
         </div>
     );
 }
