@@ -2,7 +2,7 @@ import React from "react";
 import DefaultCard from "../Cards/DefaultCard/DefaultCard";
 
 import LinkButton from "../Buttons/LinkButton.jsx"
-import uiTranslation from "../../translations/uiText.json";
+import uiTranslation from "../../translations/ui/ui.json";
 
 const uiText = uiTranslation;
 
