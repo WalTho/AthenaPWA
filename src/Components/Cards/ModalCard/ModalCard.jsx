@@ -1,10 +1,9 @@
-import React , {useState} from "react";
+import React, { useState, useEffect } from "react";
 
-const ModalCard = (props) => {
+const ModalCard = ({ planet, options, modalName, onClickToggleModal }) => {
     
-    let {planet, tMap} = props;
-    let {titles, copy} = tMap;
-
+    //Pour activer la class css de la modal
+    const [show, setShow] = useState("");
     // Copy GPS
     const [popupClass, setPopupClass] = useState("");
 
@@ -18,6 +17,14 @@ const ModalCard = (props) => {
         navigator.clipboard.writeText(text);
         copied();
     }
+    //Au montage du comp
+    useEffect(() => {
+        setShow("show");
+        //Au demontage du compo
+        return () => {
+            setShow("");
+        };
+    }, []);
 
     function ListItem(label,data) {
         return(
@@ -33,9 +40,9 @@ const ModalCard = (props) => {
     }
 
     return (
-        <div id={props.modalName} className="modal show">
+        <div id={modalName} className={`modal ${show}`}>
             <div className="modal-content">
-                <span id={`Close${props.modalName}`} className="close" onClick={props.onClickToggleModal}>&times;</span>
+                <span id={`Close${modalName}`} className="close" onClick={onClickToggleModal}>&times;</span>
                 <p className="modal-content-title">{planet.title}</p>
                 <img className="modal-content-img" src={planet.image} alt={"image de la planete " + planet.title}/>
                 <p className="modal-content-firstText">
@@ -46,7 +53,7 @@ const ModalCard = (props) => {
                         <li className="modal-content-secondText-list-item">
                             <div className="modal-content-secondText-list-item-gps popup">
                                 <span className="modal-content-secondText-list-item-gps-title">
-                                    {titles["gps-title"]}
+                                    {options.titles["gps-title"]}
                                 </span>
                                 <span
                                     className="modal-content-secondText-list-item-gps-content"
@@ -55,18 +62,18 @@ const ModalCard = (props) => {
                                     {planet.gps}
                                 </span>
                                 <span className={`popuptext ${popupClass}`} id={"myPopup"}>
-                                    {copy}
+                                    {options.copy}
                                 </span>
                             </div>
                         </li>
-                        {ListItem(titles["size-title"], planet.size)}
-                        {ListItem(titles["gravity-title"], planet.gravity)}
-                        {ListItem(titles["atmosphere-title"], planet.atmosphere)}
-                        {ListItem(titles["ore-title"], planet.ore)}
-                        {ListItem(titles["ice-title"], planet.ice)}
-                        {ListItem(titles["fauna-title"], planet.fauna)}
-                        {ListItem(titles["weather-title"], planet.weather)}
-                        {ListItem(titles["temperature-title"], planet.temperature)}
+                        {ListItem(options.titles["size-title"], planet.size)}
+                        {ListItem(options.titles["gravity-title"], planet.gravity)}
+                        {ListItem(options.titles["atmosphere-title"], planet.atmosphere)}
+                        {ListItem(options.titles["ore-title"], planet.ore)}
+                        {ListItem(options.titles["ice-title"], planet.ice)}
+                        {ListItem(options.titles["fauna-title"], planet.fauna)}
+                        {ListItem(options.titles["weather-title"], planet.weather)}
+                        {ListItem(options.titles["temperature-title"], planet.temperature)}
                     </ul>
                 </div>
             </div>
