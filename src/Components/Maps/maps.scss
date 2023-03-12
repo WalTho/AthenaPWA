@@ -1,0 +1,132 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: navFadeIn 1s linear;
+  width: 100%;
+  height: 100vh;
+
+  &-select {
+    display: flex;
+
+    &-link {
+
+      line-height: 3.5;
+      font-family: Nasalization;
+      font-size: 2em;
+      text-decoration: none;
+      color: $light-gray;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        color: $blue;
+        -webkit-text-stroke: 0.5px black;
+        filter: drop-shadow(0 0 20px white);
+      }
+    }
+  }
+
+  &-title {
+    margin-top: 150px;
+    margin-bottom: 30px;
+
+    &-text {
+      font-family: Nasalization;
+      font-size: 25px;
+      color: #BBC3C9;
+      font-style: normal;
+      font-weight: 400;
+      text-align: center;
+    }
+  }
+}
+
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 80px;
+  height: 40px;
+  background-color: rgb(20, 20, 20);
+  color: $light-gray;
+  text-align: center;
+  border-radius: 6px;
+  padding: 0 0 2.5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 90%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgb(20, 20, 20) transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+.show {
+  visibility: visible !important;
+  transition: all 1s ease-out;
+  opacity: 1 !important;
+}
+
+/* The Close Modal Button */
+.close {
+  margin-top: 10px;
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+
+.close:hover,
+.close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

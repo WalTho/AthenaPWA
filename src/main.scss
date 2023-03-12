@@ -8,11 +8,15 @@
 @import './Components/Layout/Footer/footer.scss';
 @import './Components/Layout/Loader/loader.scss';
 @import './Components/Join-us/join-us.scss';
+@import './Components/Maps/maps.scss';
+@import './Components/Maps/Centauri/centauriMap.scss';
+@import './Components/Cards/ModalCard/modalCard.scss';
 @import './Components/Cards/DefaultCard/defaultCard.scss';
 @import './Components/Admin/Login/login.scss';
-@import './Components/MapSelector/mapSelector.scss';
+@import "./Components/About/About.scss";
 
-*{
+
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -28,14 +32,18 @@ body {
   width: 100%;
   z-index: -1;
   margin: 0;
+
   ::-webkit-scrollbar {
     position: absolute;
     width: 10px;
+
     &-track {
       margin-top: 100px;
     }
+
     &-thumb {
       background: #1C1C1C;
+
       &:hover {
         background: #3b3b3b;
       }

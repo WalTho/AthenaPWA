@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState} from "react";
 
-import uiTranslation from "../../../translations/ui/ui.json";
+import uiTranslation from "../../../translations/ui.json";
 
 
 function Header() {
@@ -21,7 +21,7 @@ function Header() {
 
     const handleTouchMove = (e) => {
         const touchDown = touchPosition
-        if(touchDown === null) {
+        if (touchDown === null) {
             return
         }
         const currentTouch = e.touches[0].clientY
@@ -76,7 +76,8 @@ function Header() {
                             </a>
                         </li>
                     </ul>
-                    <button className="header__container-nav-button" onClick={handleShowLinks} tabIndex="1" aria-label="Menu">
+                    <button className="header__container-nav-button" onClick={handleShowLinks} tabIndex="1"
+                            aria-label="Menu">
                         <i className={`fa-solid ${showLinks ? "fa-chevron-up" : "fa-chevron-down"}`}></i>
                     </button>
                 </div>
