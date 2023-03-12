@@ -1,13 +1,15 @@
-import React, { useRef } from 'react';
-import { TwitchEmbed } from 'react-twitch-embed';
+import React from 'react';
+import ReactTwitchEmbedVideo from "react-twitch-embed-video"
 
 const TwitchWidget = () => {
-    const embed = useRef();
-    const handleReady = (e) => {
-        embed.current = e;
-    };
     return (
-        <TwitchEmbed channel="kliroc85" withChat={false} autoplay muted darkMode={true} height="70vh" width="80%" hideControls onVideoReady={handleReady} />
+        <ReactTwitchEmbedVideo
+            channel="kliroc85"
+            layout="video"
+            theme="dark"
+            height="900px"
+            width="80%"
+        />
     );
 };
 

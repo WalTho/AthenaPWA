@@ -1,63 +1,63 @@
 {
-  "name": "athena-pwa",
-  "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
-  "private": true,
-  "dependencies": {
-    "@emotion/react": "^11.9.0",
-    "@emotion/styled": "^11.8.1",
-    "@widgetbot/react-embed": "^1.6.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "^5.0.1",
-    "react-twitch-embed": "^3.0.1",
-    "react-uuid": "^2.0.0",
-    "sass": "^1.50.1",
-    "web-vitals": "^2.1.4"
-  },
-  "homepage": "http://WalTho.github.io/",
-  "scripts": {
-    "start": "react-scripts start --openssl-legacy-provider",
-    "sass": "sass --watch  ./src/main.scss:./public/style.css --style compressed",
-    "sass-build": "sass --update ./src/main.scss:./public/style.css --style compressed",
-    "build": "react-scripts build",
-    "test": "react-scripts test --passWithNoTests",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+    "name": "athena-pwa",
+    "version": "0.1.0",
+    "description": "",
+    "main": "index.js",
+    "private": true,
+    "dependencies": {
+        "@emotion/react": "^11.9.0",
+        "@emotion/styled": "^11.8.1",
+        "@widgetbot/react-embed": "^1.7.0",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "react-router-dom": "^6.3.0",
+        "react-scripts": "^5.0.1",
+        "react-twitch-embed-video": "^3.0.3",
+        "react-uuid": "^2.0.0",
+        "sass": "^1.50.1",
+        "web-vitals": "^2.1.4"
+    },
+    "homepage": "http://WalTho.github.io/",
+    "scripts": {
+        "start": "react-scripts start --openssl-legacy-provider",
+        "sass": "sass --watch  ./src/main.scss:./public/style.css --style compressed",
+        "sass-build": "sass --update ./src/main.scss:./public/style.css --style compressed",
+        "build": "react-scripts build",
+        "test": "react-scripts test --passWithNoTests",
+        "eject": "react-scripts eject",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Walto",
+            "email": "",
+            "url": ""
+        }
     ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "authors": [
-    {
-      "name": "Walto",
-      "email": "",
-      "url": ""
+    "license": "ISC",
+    "devDependencies": {
+        "@testing-library/jest-dom": "^5.16.4",
+        "@testing-library/react": "^13.1.1",
+        "@testing-library/user-event": "^13.5.0",
+        "gh-pages": "^4.0.0"
     }
-  ],
-  "license": "ISC",
-  "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.1.1",
-    "@testing-library/user-event": "^13.5.0",
-    "gh-pages": "^4.0.0"
-  }
 }
