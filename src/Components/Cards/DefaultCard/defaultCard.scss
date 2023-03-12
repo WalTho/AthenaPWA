@@ -1,43 +1,49 @@
-.default-card{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    &__container{
-        box-sizing: border-box;
-        width: 80%;
-        max-width: 800px;
-        height: auto;
-        background-color: #25292D;
-        border: 1px solid #70767B;
-        border-radius: 12px;
-        padding: 0 20px 40px 20px;
-        &-title{
-            padding: 40px 0 40px 0;
-            font-family: Nasalization;
-            font-size: 25px;
-            color: $light-gray;
-            font-style: normal;
-            font-weight: 400;
-            text-align: center;
-        }
-        &-firstText{
-            font-family: AllRoundGothic;
-            color: $light-gray;
-            font-style: normal;
-            font-weight: 200;
-            font-size: 18px;
-            line-height: 20px;
-            padding-bottom: 20px;
-        }
-        &-secondText{
-            font-family: AllRoundGothic;
-            color: $light-gray;
-            font-style: normal;
-            font-weight: 200;
-            font-size: 18px;
-            line-height: 20px;
-        }
+.default-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: auto;
+  height: 80vh;
+
+  &__container {
+    box-sizing: border-box;
+    width: 80%;
+    max-width: 800px;
+    height: auto;
+    background-color: #25292D;
+    border: 1px solid #70767B;
+    border-radius: 12px;
+    padding: 0 20px 40px 20px;
+
+    &-title {
+      padding: 40px 0 40px 0;
+      font-family: Nasalization;
+      font-size: 25px;
+      color: $light-gray;
+      font-style: normal;
+      font-weight: 400;
+      text-align: center;
     }
+
+    &-firstText {
+      font-family: AllRoundGothic;
+      color: $light-gray;
+      font-style: normal;
+      font-weight: 200;
+      font-size: 18px;
+      line-height: 20px;
+      padding-bottom: 20px;
+    }
+
+    &-secondText {
+      font-family: AllRoundGothic;
+      color: $light-gray;
+      font-style: normal;
+      font-weight: 200;
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
 }
