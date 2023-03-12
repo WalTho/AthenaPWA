@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState} from "react";
 
-import uiTranslation from "../../../translations/ui/ui.json";
+import uiTranslation from "../../../translations/ui.json";
 
 
 function Header() {

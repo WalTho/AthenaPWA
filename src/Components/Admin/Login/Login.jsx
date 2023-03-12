@@ -3,11 +3,11 @@ import DefaultCard from "../../Cards/DefaultCard/DefaultCard.jsx";
 
 import CancelButton from "../../Buttons/CancelButton.jsx";
 import ValidButton from "../../Buttons/ValidButton.jsx";
-import uiTranslation from "../../../translations/ui/ui.json";
+import uiTranslation from "../../../translations/ui.json";
 
 const uiText = uiTranslation;
 
-const Login = (...props) => {
+const Login = () => {
     return (
         <div className="login">
             <div className="login__container">

@@ -1,7 +1,7 @@
 import React from "react";
 import DefaultCard from "../Cards/DefaultCard/DefaultCard.jsx";
 
-import uiTranslation from "../../translations/ui/ui.json";
+import uiTranslation from "../../translations/ui.json";
 
 const uiText = uiTranslation;
 
