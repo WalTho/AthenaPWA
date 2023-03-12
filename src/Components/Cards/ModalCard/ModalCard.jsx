@@ -2,11 +2,9 @@ import React, {useState} from "react";
 
 import MapTranslation from "../../../translations/maps.json";
 
-
 const ModalCard = ({selectedSystem, selectedPlanet, onClose}) => {
 
     const tMap = MapTranslation;
-
 
     const [popupClass, setPopupClass] = useState("");
 
