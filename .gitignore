@@ -3,6 +3,7 @@
 *.css.map
 /.idea
 /.vscode
+/.fleet
 
 # dependencies
 /node_modules

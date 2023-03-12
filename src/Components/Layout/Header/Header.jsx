@@ -21,7 +21,7 @@ function Header() {
 
     const handleTouchMove = (e) => {
         const touchDown = touchPosition
-        if(touchDown === null) {
+        if (touchDown === null) {
             return
         }
         const currentTouch = e.touches[0].clientY
@@ -59,7 +59,7 @@ function Header() {
                         </li>
                         <li className="header__container-nav-list-item">
                             <div className="header__container-nav-list-item-line"></div>
-                            <a href="/" className="header__container-nav-list-item-link">
+                            <a href="/maps" className="header__container-nav-list-item-link">
                                 {uiText.UI.header.maps}
                             </a>
                         </li>
@@ -76,7 +76,8 @@ function Header() {
                             </a>
                         </li>
                     </ul>
-                    <button className="header__container-nav-button" onClick={handleShowLinks} tabIndex="1" aria-label="Menu">
+                    <button className="header__container-nav-button" onClick={handleShowLinks} tabIndex="1"
+                            aria-label="Menu">
                         <i className={`fa-solid ${showLinks ? "fa-chevron-up" : "fa-chevron-down"}`}></i>
                     </button>
                 </div>

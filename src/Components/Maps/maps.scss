@@ -1,288 +1,131 @@
-.container{
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: navFadeIn 1s linear;
+  width: 100%;
+  height: 100vh;
+
+  &-select {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    animation: navFadeIn 1s linear;
-    width: 100%;
-    &-title{
-        margin-top: 150px;
-        margin-bottom: 30px;
-        &-text{
-            font-family: Nasalization;
-            font-size: 25px;
-            color: #BBC3C9;
-            font-style: normal;
-            font-weight: 400;
-            text-align: center;
-        }
+
+    &-link {
+
+      line-height: 3.5;
+      font-family: Nasalization;
+      font-size: 35px;
+      text-decoration: none;
+      color: $light-gray;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        color: $blue;
+      }
     }
+  }
+
+  &-title {
+    margin-top: 150px;
+    margin-bottom: 30px;
+
+    &-text {
+      font-family: Nasalization;
+      font-size: 25px;
+      color: #BBC3C9;
+      font-style: normal;
+      font-weight: 400;
+      text-align: center;
+    }
+  }
 }
 
-/* The Modal (background) */
-.modal {
-    visibility: hidden;
-    transition: all 1s ease-out;
-    opacity: 0;
-    display: block;
-    position: fixed;
-    padding-top: 100px;
-    right: 100px;
-    top: 100px;
-    min-width: 500px;
-    width: 20%;
-    height: 100%;
-    overflow: auto;
-}
-/* Modal Content */
-.modal-content {
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    background-color: #25292D;
-    border: 1px solid #70767B;
-    border-radius: 12px;
-    padding: 0 20px 40px 20px;
-    transition: all 0.5s ease-in-out;
-    &-title{
-        padding: 20px 0 20px 0;
-        font-family: Nasalization;
-        font-size: 25px;
-        color: #BBC3C9;
-        font-style: normal;
-        font-weight: 400;
-        text-align: center;
-    }
-    &-img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 35px;
-    }
-    &-firstText{
-        font-family: AllRoundGothic;
-        color: #BBC3C9;
-        font-style: normal;
-        font-weight: 200;
-        font-size: 18px;
-        line-height: 30px;
-        padding-bottom: 35px;
-    }
-    &-secondText{
-        font-family: AllRoundGothic;
-        color: #BBC3C9;
-        font-style: normal;
-        font-weight: 200;
-        font-size: 18px;
-        line-height: 40px;
-        &-list{
-            list-style-type: none;
-            &-item{
-                border-top: $light-gray solid 1px;
-                border-left: $light-gray solid 1px;
-                border-right: $light-gray solid 1px;
-                height: 45px;
-                &:first-child{
-                    border-radius: 3px 3px 0 0;
-                }
-                &:last-child{
-                    border-bottom: $light-gray solid 1px;
-                    border-radius: 0 0 3px 3px;
-                }
-                &-gps{
-                    width: 100%;
-                    margin-left: 10px;
-                    &-title{
-                        width: 19%;
-                    }
-                    &-content{
-                        width: 350px;
-                        background: #22272d;
-                        border: 1px solid #14171a;
-                        border-radius: 3px;
-                        border-left: 3px solid #396377;
-                        color: $light-gray;
-                        page-break-inside: avoid;
-                        font-family: monospace;
-                        font-size: 11px;
-                        overflow: auto;
-                        padding: 0.5em 1em 0.5em 1em;
-                        margin-top: -5px;
-                        margin-left: 15px;
-                        word-wrap: break-word;
-                        cursor: pointer;
-                    }
-                }
-                &-text{
-                    margin-left: 10px;
-                    &-data{
-                        background: #22272d;
-                        border: 1px solid #14171a;
-                        border-radius: 3px;
-                        font-family: monospace;
-                        font-size: 12px;
-                        margin-left: 10px;
-                        padding: 0.5em 1em;
-                    }
-                }
-            }
-        }
-    }
-}
-@mixin planetHover {
-    transition: all 0.2s ease-in-out;
-    &:hover{
-        filter: brightness(150%);
-    }
-}
-/* The Maps */
-.maps{
-    display: flex;
-    &-svg{
-        &-avernus{
-            &-planet{
-                @include planetHover;
-            }
-        }
-        &-triton{
-            &-planet{
-                @include planetHover;
-            }
-        }
-        &-overvent{
-            &-planet{
-                @include planetHover;
-            }
-        }
-        &-rothis{
-            &-planet{
-                @include planetHover;
-            }
-        }
-        &-terra{
-            &-planet{
-                @include planetHover;
-            }
-        }
-        &-exolia{
-            &-planet{
-                @include planetHover;
-            }
-        }
-        &-treossa{
-            &-planet{
-                @include planetHover;
-            }
-        }
-        &-pertam{
-            &-planet{
-                @include planetHover;
-            }
-        }
-        &-titan{
-            &-planet{
-                @include planetHover;
-            }
-        }
-        &-luna{
-            &-planet{
-                @include planetHover;
-            }
-        }
-        &-mars{
-            &-planet{
-                @include planetHover;
-            }
-        }
-        &-europa{
-            &-planet{
-                @include planetHover;
-            }
-        }
-        &-alien{
-            &-planet{
-                @include planetHover;
-            }
-        }
-        &-wormhole{
-            &-planet{
-                @include planetHover;
-            }
-        }
-    }
-}
 
 /* Popup container - can be anything you want */
 .popup {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-  /* The actual popup */
+
+/* The actual popup */
 .popup .popuptext {
-    visibility: hidden;
-    width: 80px;
-    height: 40px;
-    background-color: rgb(20, 20, 20);
-    color: $light-gray;
-    text-align: center;
-    border-radius: 6px;
-    padding: 0 0 2.5px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 90%;
-    left: 50%;
-    margin-left: -80px;
+  visibility: hidden;
+  width: 80px;
+  height: 40px;
+  background-color: rgb(20, 20, 20);
+  color: $light-gray;
+  text-align: center;
+  border-radius: 6px;
+  padding: 0 0 2.5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 90%;
+  left: 50%;
+  margin-left: -80px;
 }
-  /* Popup arrow */
+
+/* Popup arrow */
 .popup .popuptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: rgb(20, 20, 20) transparent transparent transparent;
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgb(20, 20, 20) transparent transparent transparent;
 }
-  /* Toggle this class - hide and show the popup */
+
+/* Toggle this class - hide and show the popup */
 .popup .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s;
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
 }
+
 .show {
-    visibility: visible !important;
-    transition: all 1s ease-out;
-    opacity: 1 !important;
+  visibility: visible !important;
+  transition: all 1s ease-out;
+  opacity: 1 !important;
 }
+
 /* The Close Modal Button */
 .close {
-    margin-top: 10px;
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    transition: all 0.2s ease-in-out;
+  margin-top: 10px;
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
 }
+
 .close:hover,
 .close:focus {
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
 }
-  /* Add animation (fade in the popup) */
+
+/* Add animation (fade in the popup) */
 @-webkit-keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
+
 @keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity:1 ;}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
