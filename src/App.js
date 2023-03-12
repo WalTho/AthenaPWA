@@ -6,6 +6,7 @@ import Maps from "./Components/Maps/Maps.jsx";
 import CentauriMap from "./Components/Maps/Centauri/CentauriMap.jsx";
 import JoinUs from "./Components/Join-us/JoinUs.jsx";
 import Login from "./Components/Admin/Login/Login.jsx";
+import MapSelector from "./Components/MapSelector/MapSelector.jsx";
 import Background from "./Components/Layout/Background/Background.jsx";
 import Loader from "./Components/Layout/Loader/Loader.jsx";
 import Header from "./Components/Layout/Header/Header.jsx";
