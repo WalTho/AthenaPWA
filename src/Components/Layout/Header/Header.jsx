@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState} from "react";
 
-import uiTranslation from "../../../translations/uiText.json";
+import uiTranslation from "../../../translations/ui/ui.json";
 
 
 function Header() {
@@ -59,7 +59,7 @@ function Header() {
                         </li>
                         <li className="header__container-nav-list-item">
                             <div className="header__container-nav-list-item-line"></div>
-                            <a href="/" className="header__container-nav-list-item-link">
+                            <a href="/maps" className="header__container-nav-list-item-link">
                                 {uiText.UI.header.maps}
                             </a>
                         </li>
