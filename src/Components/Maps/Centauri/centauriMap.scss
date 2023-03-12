@@ -6,93 +6,10 @@
 }
 
 /* The Maps */
-.maps {
-  display: flex;
-
-  &-svg {
-    &-avernus {
-      &-planet {
-        @include planetHover;
-      }
-    }
-
-    &-triton {
-      &-planet {
-        @include planetHover;
-      }
-    }
-
-    &-overvent {
-      &-planet {
-        @include planetHover;
-      }
-    }
-
-    &-rothis {
-      &-planet {
-        @include planetHover;
-      }
-    }
-
-    &-terra {
-      &-planet {
-        @include planetHover;
-      }
-    }
-
-    &-exolia {
-      &-planet {
-        @include planetHover;
-      }
-    }
-
-    &-treossa {
-      &-planet {
-        @include planetHover;
-      }
-    }
-
-    &-pertam {
-      &-planet {
-        @include planetHover;
-      }
-    }
-
-    &-titan {
-      &-planet {
-        @include planetHover;
-      }
-    }
-
-    &-luna {
-      &-planet {
-        @include planetHover;
-      }
-    }
-
-    &-mars {
-      &-planet {
-        @include planetHover;
-      }
-    }
-
-    &-europa {
-      &-planet {
-        @include planetHover;
-      }
-    }
-
-    &-alien {
-      &-planet {
-        @include planetHover;
-      }
-    }
-
-    &-wormhole {
-      &-planet {
-        @include planetHover;
-      }
-    }
-  }
+.highlight {
+  @include planetHover;
 }
 
+.maps {
+  display: flex;
+}
