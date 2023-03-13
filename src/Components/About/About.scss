@@ -1,0 +1,28 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+  animation: navFadeIn 2s linear;
+  width: auto;
+
+  &-title {
+    margin-top: 100px;
+    font-family: Nasalization;
+    color: $light-gray;
+    font-size: 35px;
+  }
+
+  &__container {
+    width: 100%;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: max-content;
+
+
+  }
+}
