@@ -1,0 +1,23 @@
+{
+    "about": {
+        "title":"À propos de nous",
+        "kliroc": {
+            "title": "Kliroc",
+            "img": "./images/Kliroc_Image_par_Yuriy_Nasretdinov.png",
+            "alt": "Kliroc - Image par Yuriy Nasretdinov",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada est in erat aliquam cursus. Curabitur euismod ligula ac mauris vestibulum pellentesque. Suspendisse potenti. Mauris in nisi tincidunt, euismod lorem id, cursus lectus. Suspendisse laoreet a nunc sed euismod. Aliquam a mauris posuere, sodales dui sit amet, congue elit. Sed sodales ante libero, sit amet ornare metus tempus a. Donec bibendum sollicitudin neque, tempus placerat erat molestie in. Donec volutpat malesuada urna non mattis. Vivamus ut arcu pretium, pharetra nibh ac, dapibus magna. Proin rutrum quam ex, non lacinia turpis ornare quis."
+        },
+        "beurt": {
+            "title": "Beurt",
+            "img": "./images/Beurt_ Image_par_Alan_Castellino.jpg",
+            "alt": "Beurt - Image par Alan Castellino",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada est in erat aliquam cursus. Curabitur euismod ligula ac mauris vestibulum pellentesque. Suspendisse potenti. Mauris in nisi tincidunt, euismod lorem id, cursus lectus. Suspendisse laoreet a nunc sed euismod. Aliquam a mauris posuere, sodales dui sit amet, congue elit. Sed sodales ante libero, sit amet ornare metus tempus a. Donec bibendum sollicitudin neque, tempus placerat erat molestie in. Donec volutpat malesuada urna non mattis. Vivamus ut arcu pretium, pharetra nibh ac, dapibus magna. Proin rutrum quam ex, non lacinia turpis ornare quis."
+        },
+        "walto": {
+            "title": "Walto",
+            "img": "./images/Walto_ Image_par_WallE.png",
+            "alt": "Walto - Image par Wall-E",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada est in erat aliquam cursus. Curabitur euismod ligula ac mauris vestibulum pellentesque. Suspendisse potenti. Mauris in nisi tincidunt, euismod lorem id, cursus lectus. Suspendisse laoreet a nunc sed euismod. Aliquam a mauris posuere, sodales dui sit amet, congue elit. Sed sodales ante libero, sit amet ornare metus tempus a. Donec bibendum sollicitudin neque, tempus placerat erat molestie in. Donec volutpat malesuada urna non mattis. Vivamus ut arcu pretium, pharetra nibh ac, dapibus magna. Proin rutrum quam ex, non lacinia turpis ornare quis."
+        }
+    }
+}
