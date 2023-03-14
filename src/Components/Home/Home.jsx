@@ -10,9 +10,9 @@ const Home = () => {
         <div className="home">
             <div className="home__container">
                 <DefaultCard
-                    Title = {uiText.UI.home.title}
-                    P1 = {uiText.UI.home.firstText}
-                    P2 = {uiText.UI.home.secondText}
+                    Title={uiText.UI.home.title}
+                    P1={uiText.UI.home.firstText}
+                    P2={uiText.UI.home.secondText}
                 />
             </div>
         </div>
