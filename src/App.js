@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "./Components/Home/Home.jsx";
+import NoMatch from "./Components/Error/NoMatch.jsx"
 import About from "./Components/About/About.jsx";
 import Maps from "./Components/Maps/Maps.jsx";
 import CentauriMap from "./Components/Maps/Centauri/CentauriMap.jsx";
@@ -36,6 +37,7 @@ const App = () => {
                         <Route path="/centauri" element={<CentauriMap/>}/>
                         <Route path="/join-us" element={<JoinUs/>}/>
                         <Route path="/login" element={<Login/>}/>
+                        <Route path="*" element={<NoMatch/>}/>
                     </Routes>
                 </BrowserRouter>
             )}
