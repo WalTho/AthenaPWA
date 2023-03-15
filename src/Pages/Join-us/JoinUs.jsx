@@ -1,6 +1,6 @@
 import React from "react";
-import DiscordWidget from '../DiscordWidget/DiscordWidget';
-import TwitchWidget from '../TwitchWidget/TwitchWidget';
+import DiscordWidget from '../../Components/Widgets/DiscordWidget/DiscordWidget';
+import TwitchWidget from '../../Components/Widgets/TwitchWidget/TwitchWidget';
 
 const JoinUs = () => {
     return (

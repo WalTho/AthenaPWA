@@ -1,10 +1,10 @@
 import React from "react";
-import ImageCard from "../Cards/ImageCard/ImageCard.jsx"
+import ImageCard from "../../Components/Cards/ImageCard/ImageCard.jsx"
 
-import uiTranslation from "../../translations/about.json";
+import aboutTranslation from "../../translations/about.json";
 
 const About = () => {
-    const Text = uiTranslation;
+    const Text = aboutTranslation;
     return (
         <div className="about">
             <h1 className="about-title">

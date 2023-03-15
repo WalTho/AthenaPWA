@@ -1,18 +1,18 @@
 import React from "react";
 
-import useModal from "../../Cards/ModalCard/UseModal.jsx"
-import ModalCard from "../../Cards/ModalCard/ModalCard.jsx"
-import CentauriSVG from "./CentauriSVG.jsx";
+import useModal from "../../../Components/Cards/ModalCard/UseModal.jsx"
+import ModalCard from "../../../Components/Cards/ModalCard/ModalCard.jsx"
+import CentauriSVG from "../../../Components/SvgMaps/CentauriSVG.jsx";
 
 import MapTranslation from "../../../translations/maps.json";
 
 const CentauriMap = () => {
-    const tMap = MapTranslation;
+    const Text = MapTranslation;
     const {isModalOpen, openModal, closeModal, modalContent} = useModal();
     return (
         <div className="container">
             <div className="container-title">
-                <p className="container-title-text">{tMap.centauri.title}</p>
+                <p className="container-title-text">{Text.centauri.title}</p>
             </div>
             <div className="maps">
                 {isModalOpen && modalContent}

@@ -1,25 +1,27 @@
 .default-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: auto;
-  height: 80vh;
+  //    display: flex;
+  //    flex-direction: column;
+  //    justify-content: center;
+  //    align-items: center;
+  //    width: auto;
+  //    height: 80vh;
 
   &__container {
+    margin: auto;
     box-sizing: border-box;
     width: 80%;
-    max-width: 800px;
+    max-width: 1200px;
     height: auto;
-    background-color: #25292D;
+    background-color: transparentize(#25292D, 0.3);
     border: 1px solid #70767B;
     border-radius: 12px;
     padding: 0 20px 40px 20px;
 
     &-title {
+      width: 100%;
       padding: 40px 0 40px 0;
       font-family: Nasalization;
-      font-size: 25px;
+      font-size: 30px;
       color: $light-gray;
       font-style: normal;
       font-weight: 400;
@@ -27,22 +29,32 @@
     }
 
     &-firstText {
+      display: inline-block;
+      width: 80%;
       font-family: AllRoundGothic;
       color: $light-gray;
       font-style: normal;
       font-weight: 200;
       font-size: 18px;
-      line-height: 20px;
+      line-height: 21px;
       padding-bottom: 20px;
+      white-space: pre-line;
+      vertical-align: bottom;
+      text-align: left;
     }
 
     &-secondText {
+      display: inline-block;
+      width: 80%;
       font-family: AllRoundGothic;
       color: $light-gray;
       font-style: normal;
       font-weight: 200;
       font-size: 18px;
-      line-height: 20px;
+      line-height: 21px;
+      white-space: pre-line;
+      vertical-align: bottom;
+      text-align: left;
     }
   }
 }

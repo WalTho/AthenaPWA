@@ -1,23 +1,33 @@
-@import './utils/fonts.scss';
-@import './utils/colors.scss';
-@import './utils/buttons.scss';
+// Style Utils :
+@import './style/fonts.scss';
+@import './style/colors.scss';
 
-@import './Components/Error/noMatch.scss';
-@import './Components/Home/home.scss';
-@import './Components/Layout/Background/background.scss';
+// Layout :
 @import './Components/Layout/Header/header.scss';
 @import './Components/Layout/Footer/footer.scss';
 @import './Components/Layout/Loader/loader.scss';
-@import './Components/Join-us/join-us.scss';
-@import './Components/Maps/maps.scss';
-@import './Components/Maps/Centauri/centauriMap.scss';
+@import './Components/Layout/Background/background.scss';
+
+// Small Components :
+@import './Components/Buttons/buttons.scss';
+@import './Components/SvgMaps/svgMaps.scss';
+
+// Cards :
 @import './Components/Cards/ModalCard/modalCard.scss';
-@import './Components/Cards/DefaultCard/defaultCard.scss';
-@import './Components/Admin/Login/login.scss';
-@import "./Components/About/About.scss";
 @import './Components/Cards/ImageCard/imageCard.scss';
+@import './Components/Cards/DefaultCard/defaultCard.scss';
 
+// Error Pages :
+@import './Pages/Error/noMatch.scss';
 
+// Pages :
+@import './Pages/Home/home.scss';
+@import './Pages/Join-us/join-us.scss';
+@import './Pages/Maps/maps.scss';
+@import './Pages/Login/login.scss';
+@import "./Pages/About/About.scss";
+
+// General Properties :
 * {
   box-sizing: border-box;
   margin: 0;
@@ -49,6 +59,15 @@ body {
       &:hover {
         background: #3b3b3b;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 580px) {
+  html,
+  body {
+    ::-webkit-scrollbar {
+      width: 0;
     }
   }
 }
