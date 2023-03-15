@@ -34,7 +34,7 @@
     &-text {
       font-family: Nasalization;
       font-size: 25px;
-      color: #BBC3C9;
+      color: $light-gray;
       font-style: normal;
       font-weight: 400;
       text-align: center;
@@ -58,7 +58,7 @@
   visibility: hidden;
   width: 80px;
   height: 40px;
-  background-color: rgb(20, 20, 20);
+  background-color: $black;
   color: $light-gray;
   text-align: center;
   border-radius: 6px;
@@ -79,7 +79,7 @@
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: rgb(20, 20, 20) transparent transparent transparent;
+  border-color: $black transparent transparent transparent;
 }
 
 /* Toggle this class - hide and show the popup */
@@ -98,7 +98,7 @@
 /* The Close Modal Button */
 .close {
   margin-top: 10px;
-  color: #aaaaaa;
+  color: $light-gray;
   float: right;
   font-size: 28px;
   font-weight: bold;
