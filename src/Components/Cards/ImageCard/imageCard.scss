@@ -6,14 +6,13 @@
   justify-content: center;
   align-items: center;
   width: auto;
-  height: 80vh;
-  margin: 0 15px 0 15px;
+  margin: 50px 15px 50px 15px;
 
   &__container {
     box-sizing: border-box;
     max-width: 500px;
     height: auto;
-    background-color: #25292D;
+    background-color: transparentize(#25292D, 0.3);
     border: 1px solid #70767B;
     border-radius: 12px;
     padding: 0 20px 40px 20px;

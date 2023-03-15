@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from "react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Home from "./Components/Home/Home.jsx";
-import NoMatch from "./Components/Error/NoMatch.jsx"
-import About from "./Components/About/About.jsx";
-import Maps from "./Components/Maps/Maps.jsx";
-import CentauriMap from "./Components/Maps/Centauri/CentauriMap.jsx";
-import JoinUs from "./Components/Join-us/JoinUs.jsx";
-import Login from "./Components/Admin/Login/Login.jsx";
+import Home from "./Pages/Home/Home.jsx";
+import NoMatch from "./Pages/Error/NoMatch.jsx"
+import About from "./Pages/About/About.jsx";
+import Maps from "./Pages/Maps/Maps.jsx";
+import CentauriMap from "./Pages/Maps/Centauri/CentauriMap.jsx";
+import JoinUs from "./Pages/Join-us/JoinUs.jsx";
+import Login from "./Pages/Login/Login.jsx";
 import Background from "./Components/Layout/Background/Background.jsx";
 import Loader from "./Components/Layout/Loader/Loader.jsx";
 import Header from "./Components/Layout/Header/Header.jsx";

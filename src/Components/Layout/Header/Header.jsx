@@ -6,7 +6,7 @@ import uiTranslation from "../../../translations/ui.json";
 
 function Header() {
 
-    const uiText = uiTranslation;
+    const Text = uiTranslation;
 
     const [showLinks, setShowLinks] = useState(false)
     const handleShowLinks = () => {
@@ -40,7 +40,7 @@ function Header() {
             <div className="header__container">
                 <div className="header__container-title">
                     <h1 className="header__container-title-text">
-                        {uiText.UI.header.title}
+                        {Text.UI.header.title}
                     </h1>
                 </div>
                 <div className="header__container-nav" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
@@ -48,31 +48,31 @@ function Header() {
                         <li className="header__container-nav-list-item">
                             <div className="header__container-nav-list-item-line"></div>
                             <a href="/" className="header__container-nav-list-item-link">
-                                {uiText.UI.header.home}
+                                {Text.UI.header.home}
                             </a>
                         </li>
                         <li className="header__container-nav-list-item">
                             <div className="header__container-nav-list-item-line"></div>
                             <a href="/about" className="header__container-nav-list-item-link">
-                                {uiText.UI.header.about}
+                                {Text.UI.header.about}
                             </a>
                         </li>
                         <li className="header__container-nav-list-item">
                             <div className="header__container-nav-list-item-line"></div>
                             <a href="/maps" className="header__container-nav-list-item-link">
-                                {uiText.UI.header.maps}
+                                {Text.UI.header.maps}
                             </a>
                         </li>
                         <li className="header__container-nav-list-item">
                             <div className="header__container-nav-list-item-line"></div>
                             <a href="/" className="header__container-nav-list-item-link">
-                                {uiText.UI.header.infos}
+                                {Text.UI.header.infos}
                             </a>
                         </li>
                         <li className="header__container-nav-list-item">
                             <div className="header__container-nav-list-item-line"></div>
                             <a href="/join-us" className="header__container-nav-list-item-link">
-                                {uiText.UI.header.joinUs}
+                                {Text.UI.header.joinUs}
                             </a>
                         </li>
                     </ul>
