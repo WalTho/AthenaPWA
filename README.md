@@ -97,6 +97,22 @@ Cette méthodologie facilite également la collaboration entre les membres de l'
 
 ## Routine & Conventions Github 
 
+Nous travaillons en micro-features, cette approche offre plusieurs avantages, notamment une meilleure organisation du travail, une réduction des conflits de code et une amélioration de la qualité du
+
+### Qu'est-ce que le travail en micro-features ?
+
+1. **Découpage du projet** : Le projet est divisé en de nombreuses petites fonctionnalités qui peuvent être développées séparément. Chaque micro-feature représente une tâche ou un problème à résoudre, ce qui facilite la gestion et la priorisation du travail.
+
+2. **Branches dédiées** : Pour chaque micro-feature, on crée une branche dédiée. Cela permet d'isoler le développement de cette fonctionnalité et d'éviter les conflits avec d'autres parties du code.
+
+3. **Travail en équipe** : Les développeurs peuvent travailler sur différentes micro-features en parallèle. Ceci améliore la collaboration et la répartition du travail au sein de l'équipe.
+
+4. **Révisions et tests** : Avant de fusionner une micro-feature dans la branche principale, elle doit être soumise à un processus de révision du code (reviews) et de tests automatisés (CI). Cela garantit que la micro-feature est de qualité et qu'elle n'introduit pas de problèmes dans le projet.
+
+5. **Intégration continue** : L'utilisation d'un système d'intégration continue (CI) permet de s'assurer que chaque micro-feature est intégrée et testée automatiquement avant d'être fusionnée. Ceci réduit les risques d'introduire des erreurs ou des conflits dans la base de code principale.
+
+6. **Flexibilité** : Travailler en micro-features nous permet d'expérimenter et d'itérer rapidement sur nos idées. Il est plus facile de modifier ou de supprimer une micro-feature si elle ne répond pas aux besoins du projet ou si elle n'apporte pas de valeur ajoutée.
+
 
 ### Avant de faire une branche ou un commit
 
