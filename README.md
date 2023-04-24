@@ -26,7 +26,7 @@ Le projet se découpe ainsi :
 │   ├── package-lock.json                 # Versions exactes des dépendances
 │   ├── public
 │   │   ├── favicon.ico                   # Icône du site
-│   │   ├── index.html                    # Fichier HTML principal, la <div id="root"></div> rend l'application côté front
+│   │   ├── index.html                    # Fichier HTML principal
 │   │   ├── fonts                         # Polices du projet
 │   │   └── icons                         # Icones du projet
 │   │
