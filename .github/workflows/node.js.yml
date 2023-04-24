@@ -24,9 +24,15 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: Change to front directory
-      run: cd front
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
-    - run: npm run sass-build
+    - name: Install dependencies
+      run: npm ci
+      working-directory: front
+    - name: Build
+      run: npm run build --if-present
+      working-directory: front
+    - name: Run tests
+      run: npm test
+      working-directory: front
+    - name: Build sass
+      run: npm run sass-build
+      working-directory: front
