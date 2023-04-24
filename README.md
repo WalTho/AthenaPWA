@@ -1,6 +1,9 @@
 # Athena-PWA
 
-Athena-PWA est une Progressive Web App qui a pour but de désengorger les canaux discord de notre communauté pour plus de lisibilité et de confort.
+Athena-PWA est une Progressive Web App qui a pour but de désengorger les canaux discord de notre communauté pour plus de
+lisibilité et de confort.
+
+une connerie dans le readme
 
 ## Pour lancer le projet
 
@@ -159,22 +162,26 @@ Le projet se découpe ainsi :
 
 ## Principes et bonnes pratiques
 
-Dans le développement de notre application Athena-PWA, nous adhérons aux bonnes pratiques et principes suivants pour garantir un code propre, maintenable et évolutif :
+Dans le développement de notre application Athena-PWA, nous adhérons aux bonnes pratiques et principes suivants pour
+garantir un code propre, maintenable et évolutif :
 
 ### YAGNI (You Ain't Gonna Need It)
 
 Ce principe consiste à éviter d'ajouter des fonctionnalités ou du code en prévision de besoins futurs.
-Nous nous concentrons uniquement sur les fonctionnalités et les exigences actuelles du projet pour éviter la complexité et le gaspillage de temps inutiles.
+Nous nous concentrons uniquement sur les fonctionnalités et les exigences actuelles du projet pour éviter la complexité
+et le gaspillage de temps inutiles.
 
 ### DRY (Don't Repeat Yourself)
 
 DRY est un principe fondamental de développement qui vise à réduire la répétition du code.
-Nous nous efforçons de créer des composants et des fonctions réutilisables pour éviter de dupliquer des parties similaires du code dans différentes parties de l'application.
+Nous nous efforçons de créer des composants et des fonctions réutilisables pour éviter de dupliquer des parties
+similaires du code dans différentes parties de l'application.
 
 ### KISS (Keep It Simple, Stupid)
 
 Ce principe encourage à garder les choses simples et à éviter les solutions complexes ou inutiles.
-Nous cherchons à rendre notre code clair et facile à comprendre pour les autres développeurs qui travaillent sur le projet.
+Nous cherchons à rendre notre code clair et facile à comprendre pour les autres développeurs qui travaillent sur le
+projet.
 
 ## Technologies et méthodologies (Front)
 
@@ -183,13 +190,17 @@ Athena-PWA utilise les technologies et méthodologies suivantes pour assurer un 
 ### React.js (Functional Components)
 
 Nous utilisons React.js avec des composants fonctionnels pour développer l'interface utilisateur de notre application.
-Les composants fonctionnels nous permettent de simplifier notre code, d'améliorer la lisibilité et de faciliter la gestion des états et des effets avec les Hooks de React.
+Les composants fonctionnels nous permettent de simplifier notre code, d'améliorer la lisibilité et de faciliter la
+gestion des états et des effets avec les Hooks de React.
 
 ### Sass
 
-Sass est un préprocesseur CSS qui nous permet d'utiliser des fonctionnalités avancées telles que les variables, les mixins et les fonctions pour améliorer la lisibilité et la maintenabilité de nos fichiers de style.
+Sass est un préprocesseur CSS qui nous permet d'utiliser des fonctionnalités avancées telles que les variables, les
+mixins et les fonctions pour améliorer la lisibilité et la maintenabilité de nos fichiers de style.
 
 ### BEM (Block, Element, Modifier)
 
-Nous utilisons la méthodologie BEM pour structurer et organiser notre code SCSS. BEM nous aide à garder notre code SCSS modulaire et facile à comprendre en suivant une convention de nommage claire pour les classes.
-Cette méthodologie facilite également la collaboration entre les membres de l'équipe et rend notre projet lisible et maintenable aussi bien pour la vue que le style.
+Nous utilisons la méthodologie BEM pour structurer et organiser notre code SCSS. BEM nous aide à garder notre code SCSS
+modulaire et facile à comprendre en suivant une convention de nommage claire pour les classes.
+Cette méthodologie facilite également la collaboration entre les membres de l'équipe et rend notre projet lisible et
+maintenable aussi bien pour la vue que le style.
