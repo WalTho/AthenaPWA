@@ -25,14 +25,14 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - name : CI
-      working-directory: ../../front
+      working-directory: ./../front
       run: npm ci
     - name : Build
-      working-directory: ../../front
+      working-directory: ./../front
       run: npm run build --if-present
     - name : Test
-      working-directory: ../../front
+      working-directory: ./../front
       run: npm test
     - name : build
-      working-directory: ../../front
+      working-directory: ./../front
       run: npm run sass-build
