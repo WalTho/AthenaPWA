@@ -93,7 +93,7 @@ Sass est un préprocesseur CSS qui nous permet d'utiliser des fonctionnalités a
 
 Nous utilisons la méthodologie BEM pour structurer et organiser notre code SCSS. BEM nous aide à garder notre code SCSS modulaire et facile à comprendre en suivant une convention de nommage claire pour les classes.
 Cette méthodologie facilite également la collaboration entre les membres de l'équipe et rend notre projet lisible et maintenable aussi bien pour la vue que le style.
-
+https://getbem.com/
 
 ## Routine & Conventions Github 
 
