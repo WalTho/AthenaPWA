@@ -12,6 +12,18 @@ Pour le front :
 - npm start
 ```
 
+Pour le back :
+```
+(Créer votre environement python)
+- python3 -m venv env
+- source env/bin/activate
+
+- pip install -r requirements.txt
+- python manage.py migrate
+- python manage.py runserver 0.0.0.0:8000
+```
+
+
 ## Structure du projet
 
 Le projet se découpe ainsi :
