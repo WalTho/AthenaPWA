@@ -97,7 +97,7 @@ https://getbem.com/
 
 ## Routine & Conventions Github 
 
-Nous travaillons en micro-features, cette approche offre plusieurs avantages, notamment une meilleure organisation du travail, une réduction des conflits de code et une amélioration de la qualité du
+Nous travaillons en micro-features, cette approche offre plusieurs avantages, notamment une meilleure organisation du travail, une réduction des conflits et une amélioration de la qualité du code 
 
 ### Qu'est-ce que le travail en micro-features ?
 
